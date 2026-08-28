@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-karma-black text-karma-text-primary font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-karma-purple-500/40 text-karma-text-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-karma-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-karma-purple-700 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient-karma {
+    @apply bg-gradient-to-r from-karma-purple-400 via-karma-lilac-300 to-karma-purple-300 bg-clip-text text-transparent;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 md:px-10;
+  }
+}
