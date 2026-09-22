@@ -10,9 +10,9 @@ const categories = [
   {
     key: 'backend',
     label: 'Backend',
-    value: 90,
-    description: 'APIs, lógica de negocio y servicios que sostienen los sistemas ERP.',
-    tools: ['Java', 'Spring', '.NET', 'NestJS'],
+    value: 92,
+    description: 'Mi área principal: APIs, lógica de negocio, servicios empresariales e integraciones con foco en el ecosistema .NET.',
+    tools: ['C#', '.NET / ASP.NET Core', 'Java 17', 'Spring WebFlux'],
   },
   {
     key: 'frontend',

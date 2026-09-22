@@ -3,7 +3,8 @@
 // Corregido: la cadena real es AliExpress–Serhafen–Dinet (una integración,
 // no dos por separado), de su rol en DINET S.A. (2025-2026). VTEX fue en
 // Procesos & Sistemas SAC (2018-2022), con WooCommerce en el mismo rol.
-// Adidas/H&M/Walon/Reebok también en DINET, vía APIs REST + Azure.
+// Las demás integraciones empresariales se agrupan como APIs en Azure para
+// evitar publicar marcas específicas.
 interface Integration {
   name: string
   role: string
@@ -13,9 +14,7 @@ const integrations: Integration[] = [
   { name: 'AliExpress · Serhafen', role: 'Marketplace · Dinet' },
   { name: 'VTEX', role: 'E-commerce' },
   { name: 'WooCommerce', role: 'E-commerce' },
-  { name: 'Adidas', role: 'API REST · Azure' },
-  { name: 'H&M', role: 'API REST · Azure' },
-  { name: 'Reebok', role: 'API REST · Azure' },
+  { name: 'APIs en Azure', role: 'REST · Mensajería asíncrona' },
 ]
 </script>
 
@@ -33,7 +32,7 @@ const integrations: Integration[] = [
         trazabilidad end-to-end y cumplimiento de SLA en retail a gran escala.
       </p>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div
           v-for="item in integrations"
           :key="item.name"

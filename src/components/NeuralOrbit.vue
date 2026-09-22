@@ -9,13 +9,13 @@ interface TechNode {
 }
 
 const orbitTech: TechNode[] = [
-  { label: 'Java', angle: 0 },
-  { label: 'Spring', angle: 51 },
-  { label: '.NET', angle: 102 },
-  { label: 'Angular', angle: 153 },
-  { label: 'Vue', angle: 204 },
-  { label: 'NestJS', angle: 255 },
-  { label: 'Docker', angle: 306 },
+  { label: '.NET', angle: 0 },
+  { label: 'C#', angle: 51 },
+  { label: 'Java', angle: 102 },
+  { label: 'Spring', angle: 153 },
+  { label: 'Angular', angle: 204 },
+  { label: 'Vue', angle: 255 },
+  { label: 'Azure', angle: 306 },
 ]
 </script>
 

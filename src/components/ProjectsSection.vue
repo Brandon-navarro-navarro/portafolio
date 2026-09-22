@@ -1,7 +1,5 @@
 <script setup lang="ts">
-// El panel de pedidos sigue siendo el único con repo personal (proyecto
-// propio). Los otros dos son casos reales extraídos del CV — sin repo/demo
-// porque pertenecen a proyectos de cliente/empleador, no personales.
+// Proyectos públicos y un caso real de integración empresarial.
 interface Project {
   title: string
   description: string
@@ -13,25 +11,27 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Panel de Gestión de Pedidos',
+    title: 'Reto Técnico Interbank',
     description:
-      'Panel de operaciones e-commerce con flujo de estados validado (pendiente, preparando, enviado, entregado, cancelado).',
-    stack: ['Vue 3', 'TypeScript', 'Pinia', 'Composition API'],
-    status: 'in-progress',
+      'Sistema de clientes y productos financieros basado en microservicios, con BFF para consolidar información y flujos reactivos de extremo a extremo.',
+    stack: ['Java 17', 'Spring WebFlux', 'Microservicios', 'SQL Server', 'Docker'],
+    status: 'completed',
+    repoUrl: 'https://github.com/Brandon-navarro-navarro/RetoTecnicoInterbank',
+  },
+  {
+    title: 'IDM · Product Service',
+    description:
+      'Microservicio CRUD de productos con programación reactiva y funcional, persistencia no bloqueante, validaciones, manejo uniforme de errores y pruebas automatizadas.',
+    stack: ['Java 17', 'Spring WebFlux', 'R2DBC', 'Reactor Test', 'Docker'],
+    status: 'completed',
+    repoUrl: 'https://github.com/Brandon-navarro-navarro/IDM-PruebaTecnica',
   },
   {
     title: 'Integración AliExpress – Serhafen – Dinet',
     description:
-      'Integración e-commerce con recepción automatizada, tracking end-to-end y cumplimiento de SLA. Ampliación del alcance inicial propuesta y coordinada con stakeholders técnicos y funcionales.',
+      'Integración e-commerce con recepción automatizada, tracking end-to-end y cumplimiento de SLA mediante APIs, mensajería asíncrona y servicios Azure.',
     stack: ['C# / .NET', 'Azure Functions', 'Service Bus', 'RabbitMQ'],
     status: 'live',
-  },
-  {
-    title: 'Migración ERP a arquitectura modular',
-    description:
-      'Mantenimiento y evolución de ERP en C#/.NET con APIs Node.js y módulos Angular; liderazgo de equipo de 2 desarrolladores, estándares de código y QA.',
-    stack: ['Angular', '.NET', 'Node.js', 'TypeScript'],
-    status: 'completed',
   },
 ]
 

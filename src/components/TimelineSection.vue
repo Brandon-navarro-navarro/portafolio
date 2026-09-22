@@ -14,12 +14,22 @@ interface Role {
 
 const roles: Role[] = [
   {
+    title: 'Analista Programador Senior',
+    company: 'ISP Consulting · Cliente: Intercorp Retail',
+    period: 'Jun 2026 — Actualidad',
+    highlights: [
+      'Asignado al cliente Intercorp Retail en modalidad híbrida, con enfoque en análisis de sistemas de software y desarrollo con Vue.js.',
+    ],
+    stack: ['Vue.js', 'Análisis de sistemas', 'Intercorp Retail'],
+    current: true,
+  },
+  {
     title: 'Programador',
     company: 'DINET S.A.',
     period: 'Feb 2025 — Abr 2026',
     highlights: [
       'Integración e-commerce AliExpress – Serhafen – Dinet: recepción automatizada, tracking end-to-end y cumplimiento de SLA.',
-      'Integraciones con Adidas, H&M, Walon y Reebok vía APIs REST, mensajería asíncrona y Azure.',
+      'Integraciones empresariales mediante APIs REST, mensajería asíncrona y servicios Azure.',
     ],
     stack: ['C# / .NET', 'Azure Functions', 'Service Bus', 'SQL Server', 'Oracle', 'RabbitMQ'],
   },

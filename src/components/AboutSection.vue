@@ -6,7 +6,7 @@
 const stats = [
   { value: '7+', label: 'Años de experiencia' },
   { value: '10+', label: 'Tecnologías dominadas' },
-  { value: 'ERP', label: 'Especialidad principal' },
+  { value: '.NET', label: 'Especialidad principal' },
 ]
 
 interface Approach {
@@ -45,19 +45,18 @@ const approach: Approach[] = [
 
         <span class="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-karma-void border border-karma-border text-xs font-mono text-karma-text-secondary">
           <span class="w-1.5 h-1.5 rounded-full bg-karma-purple-400 animate-pulse" />
-          Actualmente en Intercorp Retail
+          ISP Consulting · Cliente: Intercorp Retail
         </span>
 
         <p class="text-karma-text-secondary leading-relaxed mb-4">
-          Soy Senior Technical Analyst y Full Stack Developer con más de 7 años de experiencia
-          en desarrollo de sistemas ERP e integraciones. Trabajo tanto en backend robusto
-          (Java/Spring, .NET) como en interfaces modernas (Angular, Vue), siempre buscando
-          que ambos lados hablen el mismo idioma.
+          Soy Analista Programador Senior y Full Stack Developer con más de 7 años de experiencia
+          en desarrollo de sistemas ERP e integraciones. Mi principal fortaleza está en C#/.NET,
+          complementada con experiencia en Java y Spring para servicios backend reactivos.
         </p>
         <p class="text-karma-text-secondary leading-relaxed">
-          Me especializo en migraciones de sistemas legacy hacia arquitecturas modernas,
-          integraciones entre plataformas y despliegue de soluciones escalables con
-          Docker/Kubernetes sobre Oracle y PostgreSQL.
+          Desarrollo APIs, lógica de negocio e integraciones entre plataformas, además de
+          interfaces modernas con Angular y Vue. Trabajo con SQL Server, Oracle y PostgreSQL,
+          y despliego soluciones con Azure y Docker.
         </p>
       </div>
 

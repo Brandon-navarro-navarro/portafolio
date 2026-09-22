@@ -18,8 +18,8 @@ import NeuralOrbit from '@/components/NeuralOrbit.vue'
           <span class="block text-gradient-karma">Navarro</span>
         </h1>
         <p class="text-lg text-karma-text-secondary max-w-md mb-8">
-          Full Stack Developer con 7+ años construyendo sistemas ERP e integraciones
-          robustas. Del backend a la interfaz, sin fricción.
+          Full Stack Developer con 7+ años construyendo sistemas empresariales e
+          integraciones, con especialidad en C#/.NET y experiencia en backend reactivo con Java.
         </p>
         <div class="flex flex-wrap gap-4">
           <a

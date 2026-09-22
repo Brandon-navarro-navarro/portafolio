@@ -8,28 +8,25 @@ español (español neutro/de Perú, sin modismos de otros países). Estudia
 Ing. Sistemas e Informática en la Universidad Tecnológica del Perú (2019 —
 en curso, último ciclo).
 
-**Nota sobre una discrepancia de datos:** Brandon mencionó antes en el chat
-que trabaja "actualmente en Intercorp Retail" y eso quedó reflejado como
-badge en `AboutSection.vue`. Sin embargo, su CV (compartido después, con
-fecha de emisión reciente) muestra su rol más reciente como **Programador en
-DINET S.A., Feb 2025 – Abr 2026** — no menciona Intercorp Retail en absoluto.
-No se corrigió el badge de Intercorp automáticamente porque no está claro
-cuál es el dato vigente (podría ser un rol posterior no reflejado aún en el
-CV, o el CV podría ser el dato correcto y "Intercorp" ya no aplicar) —
-**preguntarle a Brandon cuál de los dos es el estado actual real antes de
-tocar ese badge.**
+Su fortaleza técnica principal es **C#/.NET**. También desarrolla backend con
+Java 17 y Spring WebFlux, especialmente con programación reactiva y funcional.
+Desde junio de 2026 trabaja como **Analista Programador Senior en ISP
+Consulting**, asignado al cliente **Intercorp Retail**.
 
 ## Experiencia laboral real (del CV, más reciente primero)
-1. **Programador — DINET S.A.** (Feb 2025 – Abr 2026): integración
-   AliExpress–Serhafen–Dinet (tracking end-to-end, SLA); integraciones
-   Adidas/H&M/Walon/Reebok vía REST + Azure. Stack: C#/.NET, Azure Functions,
-   Service Bus, SQL Server, Oracle, Java Android, RabbitMQ, Azure DevOps.
-2. **Software Engineer — TS Net S.A. (Evol), cliente Interbank** (Jul–Oct 2024):
+1. **Analista Programador Senior — ISP Consulting, cliente Intercorp Retail**
+   (Jun 2026 – actualidad): análisis de sistemas de software y Vue.js, en
+   modalidad híbrida.
+2. **Programador — DINET S.A.** (Feb 2025 – Abr 2026): integración
+   AliExpress–Serhafen–Dinet (tracking end-to-end, SLA) e integraciones
+   empresariales mediante REST, mensajería asíncrona y Azure. Stack: C#/.NET,
+   Azure Functions, Service Bus, SQL Server, Oracle, RabbitMQ, Azure DevOps.
+3. **Software Engineer — TS Net S.A. (Evol), cliente Interbank** (Jul–Oct 2024):
    sistema de Gestión de Requerimientos de Accesos. Stack: .NET Core,
    Angular, TypeScript, SQL Server, Power Automate, Azure, Jira/SCRUM.
-3. **Analista Desarrollador — Simplifica INC S.A.C.** (Ene 2023 – Jul 2024):
+4. **Analista Desarrollador — Simplifica INC S.A.C.** (Ene 2023 – Jul 2024):
    ERP en C#/.NET + Node.js, módulos Angular; lideró equipo de 2 devs.
-4. **Desarrollador de Software — Procesos & Sistemas SAC** (Mar 2018 – Dic
+5. **Desarrollador de Software — Procesos & Sistemas SAC** (Mar 2018 – Dic
    2022): ERP completo (Logística, Ventas, Producción, Activos Fijos) en
    ASP.NET/C#; integraciones **VTEX** y **WooCommerce**.
 
@@ -41,8 +38,8 @@ lo pide explícitamente, agregarlo ahí.
 
 ## Qué es este proyecto
 Portafolio personal de desarrollador Full Stack, construido con Vue 3 +
-TypeScript + Vite + Tailwind CSS. Se publicará gratis en Vercel bajo el
-subdominio `brandonnavarro.vercel.app` (a confirmar disponibilidad).
+TypeScript + Vite + Tailwind CSS y publicado con GitHub Actions en GitHub
+Pages: `https://brandon-navarro-navarro.github.io/portafolio/`.
 
 ## Identidad de marca — MUY IMPORTANTE
 Brandon tiene un proyecto personal más grande llamado **Karma Corp** (una
@@ -105,8 +102,9 @@ con pulsos va en STACK. No mezclarlos.**
 2. `AboutSection.vue` — bio corta + stats rápidas + 4 tarjetas de "cómo
    trabajo" (incluye liderazgo técnico, dato real del CV)
 3. `TimelineSection.vue` — **nueva**, timeline de experiencia laboral real
-   con las 4 empresas del CV (más reciente primero: DINET → TS Net/Evol →
-   Simplifica INC → Procesos & Sistemas), cada una con highlights y stack.
+   con la experiencia más reciente primero: ISP Consulting/Intercorp Retail →
+   DINET → TS Net/Evol → Simplifica INC → Procesos & Sistemas, cada una con
+   highlights y stack.
    No existía antes esta vista cronológica.
 4. `StackSection.vue` — pentágono de stats (`StatRadar.vue`) + panel de
    detalle por categoría (5 ejes: Backend, Frontend, Bases de datos,
@@ -117,15 +115,12 @@ con pulsos va en STACK. No mezclarlos.**
    `TechIconGrid.vue` (grilla de tecnologías, actualizada con datos reales
    del CV: C#, Azure, Azure Functions, Service Bus, RabbitMQ, etc.)
 5. `ExperienceSection.vue` — integraciones de e-commerce destacadas,
-   **corregidas con datos del CV real**: AliExpress·Serhafen (una sola
-   cadena de integración, de DINET), VTEX y WooCommerce (de Procesos &
-   Sistemas), Adidas/H&M/Reebok (de DINET). Ya no dice "SERHAFEN para
-   conectar Temu" como cadena separada — esa era una simplificación
-   imprecisa de antes de tener el CV.
-6. `ProjectsSection.vue` — 3 proyectos: el panel de pedidos personal (único
-   con posible repo propio) + 2 casos reales del CV (integración
-   AliExpress-Serhafen-Dinet, migración ERP modular) sin repo/demo porque
-   son de cliente/empleador.
+   **corregidas con datos reales**: AliExpress·Serhafen, VTEX, WooCommerce y
+   una categoría genérica para integraciones mediante APIs y Azure. No se
+   publican otras marcas específicas.
+6. `ProjectsSection.vue` — 3 proyectos: Reto Técnico Interbank, IDM Product
+   Service (ambos repositorios backend públicos con Java reactivo/funcional)
+   y el caso de integración AliExpress–Serhafen–Dinet.
 7. `ContactSection.vue` — **datos reales** ya cargados: email
    (brandon.153120@gmail.com) y LinkedIn. Falta el usuario real de GitHub
    (sigue como placeholder, no estaba en el CV).
@@ -155,30 +150,21 @@ de energía interno (`box-shadow` inset animado) para dar sensación de
 actividad. Vive en `StackSection.vue`, después del pentágono/panel.
 
 ## Componente TechIconGrid.vue
-Grilla de tarjetas cuadradas, una por tecnología del stack de Brandon
-(Java, Spring, .NET, Angular, Vue, TypeScript, NestJS, Node.js, Oracle,
-PostgreSQL, SQL Server, Docker, Kubernetes, Git, REST APIs, Pinia). Cada
+Grilla de tarjetas cuadradas, una por tecnología del stack de Brandon, con
+C#/.NET y ASP.NET Core primero, seguidos por Azure, Java 17, Spring WebFlux,
+Project Reactor, R2DBC, Angular, Vue, bases de datos y herramientas. Cada
 tarjeta muestra un monograma corto (no logos de marca reales, por temas de
 licencia de íconos) + el nombre. Hover con glow morado. Vive en
 `StackSection.vue`, al final.
 
 ## Pendientes / placeholders a completar con Brandon
-- **Aclarar Intercorp vs. DINET**: ver nota arriba — no se sabe cuál es el
-  empleador vigente real, preguntarle a Brandon antes de tocar el badge de
-  `AboutSection.vue` o el timeline.
-- **GitHub real**: `ContactSection.vue` sigue con placeholder de GitHub —
-  no estaba en el CV, falta que Brandon lo confirme.
-- **Repos/demos de proyectos**: los 3 proyectos de `ProjectsSection.vue` no
-  tienen links — el panel de pedidos podría llevar su repo personal cuando
-  exista; los otros dos son de empleador, probablemente sin repo público.
 - **Valores del pentágono de stats**: los porcentajes en `StackSection.vue`
   (`categories[].value`) siguen siendo estimaciones iniciales — ajustar con
   Brandon a su autopercepción real.
 - **Teléfono de contacto**: deliberadamente omitido de `ContactSection.vue`
   (ver nota arriba) — agregar solo si Brandon lo pide explícitamente.
-- **SEO/OG image**: falta generar una imagen Open Graph para compartir el link.
-- **Dominio**: decidir si se queda en `brandonnavarro.vercel.app` (gratis) o
-  se compra un dominio propio tipo `.dev` más adelante.
+- **Dominio**: decidir si se mantiene GitHub Pages o se compra un dominio
+  propio tipo `.dev` más adelante.
 
 ## Cómo correr el proyecto
 ```bash
@@ -187,5 +173,6 @@ npm run dev
 ```
 
 ## Deploy
-Pensado para Vercel (gratis): conectar el repo de GitHub, Vercel detecta
+Cada push a `main` ejecuta `.github/workflows/deploy-pages.yml` y publica el
+contenido compilado en GitHub Pages.
 Vite automáticamente (build: `npm run build`, output: `dist`).
