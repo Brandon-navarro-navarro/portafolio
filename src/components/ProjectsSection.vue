@@ -35,6 +35,21 @@ const projects: Project[] = [
   },
 ]
 
+const restaurantCaseStudy = {
+  title: 'ERP · Vertical de Restaurante',
+  description:
+    'Solución empresarial orientada a centralizar la operación de un restaurante, desde la atención y preparación de pedidos hasta el control de caja e inventario.',
+  modules: [
+    'Mesas y pedidos',
+    'Flujo de cocina',
+    'Caja y ventas',
+    'Inventario e insumos',
+    'Roles y permisos',
+    'Reportes operativos',
+  ],
+  stack: ['C# / .NET', 'API REST', 'SQL Server', 'Vue.js'],
+}
+
 const statusLabel: Record<Project['status'], string> = {
   live: 'En producción',
   completed: 'Completado',
@@ -99,6 +114,64 @@ const statusLabel: Record<Project['status'], string> = {
           </div>
         </article>
       </div>
+
+      <article
+        class="group relative mt-8 overflow-hidden rounded-2xl border border-karma-purple-500/40 bg-karma-surface p-6 md:p-8 hover:border-karma-purple-400/70 transition-colors"
+      >
+        <div class="pointer-events-none absolute inset-0 bg-karma-radial opacity-60" />
+
+        <div class="relative grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
+          <div>
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+              <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-karma-purple-500/15 text-karma-lilac-300 border border-karma-purple-500/30">
+                CASO DE ESTUDIO PRIVADO
+              </span>
+              <span class="text-xs font-mono text-karma-text-muted">Código fuente protegido</span>
+            </div>
+
+            <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-2">
+              VERTICAL ERP / RESTAURANTE
+            </p>
+            <h3 class="text-2xl md:text-3xl font-bold mb-3 group-hover:text-karma-lilac-300 transition-colors">
+              {{ restaurantCaseStudy.title }}
+            </h3>
+            <p class="text-karma-text-secondary leading-relaxed max-w-2xl mb-6">
+              {{ restaurantCaseStudy.description }}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="tech in restaurantCaseStudy.stack"
+                :key="tech"
+                class="text-xs font-mono px-3 py-1.5 rounded-md bg-karma-void border border-karma-border text-karma-text-secondary"
+              >
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-karma-void/80 border border-karma-border p-5 md:p-6">
+            <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-4">
+              MÓDULOS PRINCIPALES
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-3">
+              <li
+                v-for="module in restaurantCaseStudy.modules"
+                :key="module"
+                class="flex items-center gap-2 text-sm text-karma-text-secondary"
+              >
+                <span class="w-1.5 h-1.5 shrink-0 rounded-full bg-karma-purple-400 shadow-glow-purple" />
+                {{ module }}
+              </li>
+            </ul>
+
+            <p class="mt-5 pt-4 border-t border-karma-border text-xs text-karma-text-muted leading-relaxed">
+              Se presenta el alcance funcional y la arquitectura general sin exponer repositorios,
+              datos de clientes, credenciales ni reglas de negocio sensibles.
+            </p>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 </template>

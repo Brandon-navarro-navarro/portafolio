@@ -118,9 +118,11 @@ con pulsos va en STACK. No mezclarlos.**
    **corregidas con datos reales**: AliExpress·Serhafen, VTEX, WooCommerce y
    una categoría genérica para integraciones mediante APIs y Azure. No se
    publican otras marcas específicas.
-6. `ProjectsSection.vue` — 3 proyectos: Reto Técnico Interbank, IDM Product
-   Service (ambos repositorios backend públicos con Java reactivo/funcional)
-   y el caso de integración AliExpress–Serhafen–Dinet.
+6. `ProjectsSection.vue` — 3 proyectos principales: Reto Técnico Interbank,
+   IDM Product Service (ambos repositorios backend públicos con Java
+   reactivo/funcional) y el caso de integración AliExpress–Serhafen–Dinet.
+   Debajo se muestra el ERP Vertical de Restaurante como caso de estudio
+   privado: alcance funcional, módulos y stack, sin repositorio ni código.
 7. `ContactSection.vue` — **datos reales** ya cargados: email
    (brandon.153120@gmail.com) y LinkedIn. Falta el usuario real de GitHub
    (sigue como placeholder, no estaba en el CV).
