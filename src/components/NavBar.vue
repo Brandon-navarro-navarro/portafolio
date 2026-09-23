@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import ProfessionalMark from '@/components/ProfessionalMark.vue'
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
 
 const links = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Sobre mí', href: '#about' },
-  { label: 'Stack', href: '#stack' },
+  { label: 'Perfil', href: '#about' },
+  { label: 'Trayectoria', href: '#timeline' },
+  { label: 'Capacidades', href: '#stack' },
   { label: 'Proyectos', href: '#projects' },
   { label: 'Contacto', href: '#contact' },
 ]
@@ -23,14 +24,15 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 <template>
   <header
     class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
-    :class="scrolled ? 'bg-karma-black/80 backdrop-blur-md border-b border-karma-border' : 'bg-transparent'"
+    :class="scrolled ? 'bg-karma-black/90 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'"
   >
     <nav class="section-container flex items-center justify-between h-16">
-      <a href="#hero" class="font-mono font-semibold text-lg text-gradient-karma tracking-tight">
-        BN/
+      <a href="#hero" class="flex items-center gap-2.5" aria-label="Ir al inicio">
+        <ProfessionalMark variant="layers" uid="nav-mark" :size="28" />
+        <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white">Brandon Navarro</span>
       </a>
 
-      <ul class="hidden md:flex items-center gap-8 text-sm text-karma-text-secondary">
+      <ul class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.12em] text-karma-text-muted">
         <li v-for="link in links" :key="link.href">
           <a :href="link.href" class="hover:text-karma-lilac-300 transition-colors">
             {{ link.label }}

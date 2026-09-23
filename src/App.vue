@@ -12,9 +12,6 @@ import FooterBar from '@/components/FooterBar.vue'
 
 <template>
   <div class="relative min-h-screen bg-karma-black overflow-x-hidden">
-    <!-- Glow de fondo global, sutil -->
-    <div class="pointer-events-none fixed inset-0 bg-karma-radial" />
-
     <NavBar />
 
     <main class="relative z-10">

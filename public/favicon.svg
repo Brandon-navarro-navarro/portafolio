@@ -1,4 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#120c1e"/>
-  <text x="16" y="22" font-family="monospace" font-size="16" font-weight="700" fill="#b78eff" text-anchor="middle">BN</text>
+  <defs>
+    <linearGradient id="m" x1="6" y1="6" x2="25" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/><stop offset=".5" stop-color="#797b84"/><stop offset="1" stop-color="#e5e6ea"/>
+    </linearGradient>
+    <linearGradient id="v" x1="9" y1="6" x2="26" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b79bff"/><stop offset=".55" stop-color="#7650d8"/><stop offset="1" stop-color="#37255f"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="5" fill="#08090d"/>
+  <path d="M6 9l9 6v6l-9-6V9z" fill="url(#m)"/>
+  <path d="M15.5 15.2l8-5v6l-8 5v-6z" fill="url(#v)"/>
+  <path d="M10 17l9 5.5V28l-9-5.5V17z" fill="url(#m)"/>
+  <path d="M19.5 22l7.5-4.5V23l-7.5 5v-6z" fill="url(#v)"/>
 </svg>

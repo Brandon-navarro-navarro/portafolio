@@ -52,12 +52,12 @@ personal de marca:
 - **Lilas** (acentos secundarios, hover states, texto destacado)
 
 Los tokens ya están definidos en `tailwind.config.js` bajo `colors.karma.*`:
-- `karma.black` (#0a0710) — fondo base
-- `karma.void` (#120c1e) — fondo de secciones
-- `karma.surface` (#1a1229) — cards/superficies elevadas
-- `karma.border` (#2e2140) — bordes sutiles
-- `karma.purple.{50-900}` — escala de morados, `500` (#8433f5) es el acento principal
-- `karma.lilac.{100-500}` — escala de lilas, `300` (#cbaeff) es el acento secundario
+- `karma.black` (#08090d) — fondo base neutro
+- `karma.void` (#0e1016) — fondo de secciones
+- `karma.surface` (#141620) — cards/superficies elevadas
+- `karma.border` (#292c37) — bordes sutiles
+- `karma.purple.{50-900}` — escala de morados, `500` (#7c55df) es el acento principal
+- `karma.lilac.{100-500}` — escala de lilas, `300` (#c0acef) es el acento secundario
 - `karma.text.{primary,secondary,muted}` — jerarquía de texto sobre fondo oscuro
 
 **Regla para cualquier trabajo futuro en este proyecto: mantener siempre esta
@@ -66,54 +66,29 @@ verdes, naranjas) salvo que Brandon lo pida explícitamente.** Si en el futuro
 se conecta este portafolio con Karma Corp (por ejemplo, mostrándolo como
 proyecto destacado), la coherencia visual entre ambos es intencional.
 
-## Referencias de diseño usadas — LEER CON CUIDADO, hubo confusión antes
-Brandon mostró varios portafolios como inspiración. **Regla clave que costó
-varias iteraciones entender: el efecto de ÓRBITA (tecnologías girando físicamente
-alrededor del núcleo, como planetas) va en el HERO. El efecto de CUBO/TESSERACTO
-con pulsos va en STACK. No mezclarlos.**
+## Dirección visual actual
+El portafolio usa un lenguaje editorial y tecnológico sobrio. La referencia
+principal son símbolos abstractos con volumen metálico, plata y morado sobre
+un fondo negro neutro. Evitar efectos que parezcan videojuegos: órbitas de
+tecnologías, cubos giratorios, porcentajes de habilidad, exceso de chips,
+glows permanentes y tarjetas demasiado redondeadas.
 
-1. **https://gauravrathva.me/** — sistema de "seis disciplinas" tipo
-   skill-tree inspeccionable. Adaptado en `StackSection.vue` como el
-   pentágono de stats + panel de detalle seleccionable.
-
-2. **https://hassan-ali-portfolio-nine.vercel.app/** — tecnologías alrededor
-   de la foto en el hero. Brandon no quiere foto, así que se puso un núcleo
-   con iniciales "BN" y las tecnologías **orbitando físicamente alrededor**
-   (rotación CSS real, como el sol y la tierra) — esto es `NeuralOrbit.vue`
-   en el Hero. Ver detalle abajo: la primera versión de este componente NO
-   giraba (solo estaba posicionado en círculo, estático) y hubo que
-   corregirlo con `@keyframes` reales.
-
-3. **https://www.redoyanulhaque.me/** — dos ideas de aquí, para DOS lugares
-   distintos:
-   - El efecto "tesseracto" (cubo 3D girando con pulsos de energía) que
-     Brandon pidió para la sección **Stack** → `TesseractCube.vue`.
-   - Una **grilla de íconos de tecnologías** (cuadrícula de tarjetas, una
-     por tecnología, con su ícono) — Brandon compartió una captura de esto
-     literal. Implementado como `TechIconGrid.vue` en Stack. **No es una
-     pirámide de texto apilada** (esa fue una primera interpretación
-     equivocada que se descartó — el componente `StackPyramid.vue` ya no
-     existe, fue eliminado).
+`ProfessionalMark.vue` contiene tres símbolos SVG propios (`orbit`, `link` y
+`layers`) usados como sistema visual para Arquitectura, Integraciones y
+Producto. Los degradados y sombras deben ser controlados; el contenido,
+jerarquía tipográfica y espacio negativo tienen prioridad sobre la animación.
 
 ## Estructura de secciones (single-page, scroll con anchors)
-1. `HeroSection.vue` — nombre, título, CTA, fondo `NetworkGlow.vue` (glow
-   ambiental sutil) + `NeuralOrbit.vue` (núcleo BN fijo con tecnologías
-   ORBITANDO alrededor, rotación CSS real vía `@keyframes`)
+1. `HeroSection.vue` — propuesta profesional, CTA y tres símbolos metálicos
+   para Arquitectura, Integraciones y Producto.
 2. `AboutSection.vue` — bio corta + stats rápidas + 4 tarjetas de "cómo
    trabajo" (incluye liderazgo técnico, dato real del CV)
-3. `TimelineSection.vue` — **nueva**, timeline de experiencia laboral real
+3. `TimelineSection.vue` — timeline de experiencia laboral real
    con la experiencia más reciente primero: ISP Consulting/Intercorp Retail →
    DINET → TS Net/Evol → Simplifica INC → Procesos & Sistemas, cada una con
    highlights y stack.
-   No existía antes esta vista cronológica.
-4. `StackSection.vue` — pentágono de stats (`StatRadar.vue`) + panel de
-   detalle por categoría (5 ejes: Backend, Frontend, Bases de datos,
-   **Analista**, Integraciones — "Analista" reemplazó a "DevOps" porque
-   Brandon lleva el levantamiento de requerimientos hasta la implementación
-   de los proyectos, no administra infraestructura) + `TesseractCube.vue`
-   (cubo 3D girando con las categorías en sus caras y pulsos de energía) +
-   `TechIconGrid.vue` (grilla de tecnologías, actualizada con datos reales
-   del CV: C#, Azure, Azure Functions, Service Bus, RabbitMQ, etc.)
+4. `StackSection.vue` — tres pilares profesionales con iconografía metálica y
+   toolbox agrupado en Backend, Frontend, Datos y Cloud/Integración.
 5. `ExperienceSection.vue` — integraciones de e-commerce destacadas,
    **corregidas con datos reales**: AliExpress·Serhafen, VTEX, WooCommerce y
    una categoría genérica para integraciones mediante APIs y Azure. No se
@@ -122,50 +97,14 @@ con pulsos va en STACK. No mezclarlos.**
    IDM Product Service (ambos repositorios backend públicos con Java
    reactivo/funcional) y el caso de integración AliExpress–Serhafen–Dinet.
    Debajo se muestra el ERP Vertical de Restaurante como caso de estudio
-   privado: alcance funcional, módulos y stack, sin repositorio ni código.
+    con código fuente privado: alcance funcional, módulos y stack.
    La tarjeta enlaza a la ficha detallada multipágina
    `/proyectos/restaurante/`, que presenta propuesta, capacidades,
    arquitectura y roadmap con enfoque comercial/técnico.
-7. `ContactSection.vue` — **datos reales** ya cargados: email
-   (brandon.153120@gmail.com) y LinkedIn. Falta el usuario real de GitHub
-   (sigue como placeholder, no estaba en el CV).
+7. `ContactSection.vue` — datos reales: email, LinkedIn y GitHub.
 8. `FooterBar.vue`
 
-## Componente NetworkGlow.vue
-Fondo animado del Hero: núcleo con glow radial pulsante + nodos satélite
-conectados por líneas SVG, con parpadeo desincronizado por nodo. Es solo
-ambientación de fondo (no interactúa con la órbita de `NeuralOrbit.vue`).
-
-## Componente NeuralOrbit.vue — EL EFECTO ÓRBITA DEL HERO
-Núcleo central "BN" fijo. Un contenedor padre gira con `@keyframes
-orbit-spin` (rotateZ 0→360deg, 40s linear infinite) y dentro de él están
-posicionados los 7 chips de tecnología en círculo; cada chip tiene una
-contra-rotación (`orbit-spin-reverse`) para no verse "de cabeza" mientras
-el conjunto gira — así el texto siempre se lee horizontal aunque esté
-orbitando. Esto reemplazó una primera versión que solo posicionaba los
-chips en círculo sin animación real (bug ya corregido).
-
-## Componente TesseractCube.vue — EL EFECTO TESSERACTO DE STACK
-Cubo 3D real vía `transform-style: preserve-3d` + `perspective` en el
-contenedor padre. 6 caras, cada una con `rotateY`/`rotateX` +
-`translateZ(90px)` para formar el cubo, mostrando las 5 categorías del
-stack (+ una cara "Full Stack"). El cubo entero gira con `@keyframes
-cube-spin` (rotateY 360deg, 14s linear infinite). Cada cara tiene un pulso
-de energía interno (`box-shadow` inset animado) para dar sensación de
-actividad. Vive en `StackSection.vue`, después del pentágono/panel.
-
-## Componente TechIconGrid.vue
-Grilla de tarjetas cuadradas, una por tecnología del stack de Brandon, con
-C#/.NET y ASP.NET Core primero, seguidos por Azure, Java 17, Spring WebFlux,
-Project Reactor, R2DBC, Angular, Vue, bases de datos y herramientas. Cada
-tarjeta muestra un monograma corto (no logos de marca reales, por temas de
-licencia de íconos) + el nombre. Hover con glow morado. Vive en
-`StackSection.vue`, al final.
-
 ## Pendientes / placeholders a completar con Brandon
-- **Valores del pentágono de stats**: los porcentajes en `StackSection.vue`
-  (`categories[].value`) siguen siendo estimaciones iniciales — ajustar con
-  Brandon a su autopercepción real.
 - **Teléfono de contacto**: deliberadamente omitido de `ContactSection.vue`
   (ver nota arriba) — agregar solo si Brandon lo pide explícitamente.
 - **Dominio**: decidir si se mantiene GitHub Pages o se compra un dominio

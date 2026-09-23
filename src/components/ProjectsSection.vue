@@ -38,14 +38,14 @@ const projects: Project[] = [
 const restaurantCaseStudy = {
   title: 'ERP · Vertical de Restaurante',
   description:
-    'Solución empresarial orientada a centralizar la operación de un restaurante, desde la atención y preparación de pedidos hasta el control de caja e inventario.',
+    'Back office para configurar y supervisar la operación de un restaurante: espacios, carta, inventario, recetas y parámetros por establecimiento.',
   modules: [
-    'Mesas y pedidos',
-    'Flujo de cocina',
-    'Caja y ventas',
+    'Salones y mesas',
+    'Carta y combos',
     'Inventario e insumos',
-    'Roles y permisos',
-    'Reportes operativos',
+    'Recetas y costos',
+    'Almacenes',
+    'Configuración operativa',
   ],
   stack: ['C# / .NET', 'API REST', 'SQL Server', 'Vue.js'],
   caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/restaurante/`,
@@ -59,10 +59,10 @@ const statusLabel: Record<Project['status'], string> = {
 </script>
 
 <template>
-  <section id="projects" class="py-24 border-t border-karma-border/50">
+  <section id="projects" class="border-b border-white/10 bg-karma-void/45 py-24">
     <div class="section-container">
-      <p class="font-mono text-sm text-karma-purple-400 mb-3 tracking-widest">03 · PROYECTOS</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">
+      <p class="section-eyebrow mb-4">05 · PROYECTOS</p>
+      <h2 class="text-3xl font-semibold tracking-tight md:text-5xl mb-12">
         Trabajo <span class="text-gradient-karma">destacado</span>
       </h2>
 
@@ -70,10 +70,10 @@ const statusLabel: Record<Project['status'], string> = {
         <article
           v-for="project in projects"
           :key="project.title"
-          class="group rounded-xl bg-karma-surface border border-karma-border p-6 hover:border-karma-purple-400/60 transition-colors"
+          class="group border border-white/10 bg-karma-black p-6 transition-colors hover:border-karma-purple-400/50"
         >
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono px-2 py-1 rounded-full bg-karma-void text-karma-lilac-300 border border-karma-border">
+            <span class="border-l border-karma-purple-400 pl-2 text-[10px] font-mono uppercase tracking-wider text-karma-lilac-300">
               {{ statusLabel[project.status] }}
             </span>
           </div>
@@ -87,7 +87,7 @@ const statusLabel: Record<Project['status'], string> = {
             <span
               v-for="tech in project.stack"
               :key="tech"
-              class="text-xs font-mono px-2 py-1 rounded-md bg-karma-void text-karma-text-muted"
+              class="border-l border-white/15 px-2 py-0.5 text-[10px] font-mono text-karma-text-muted"
             >
               {{ tech }}
             </span>
@@ -117,17 +117,17 @@ const statusLabel: Record<Project['status'], string> = {
       </div>
 
       <article
-        class="group relative mt-8 overflow-hidden rounded-2xl border border-karma-purple-500/40 bg-karma-surface p-6 md:p-8 hover:border-karma-purple-400/70 transition-colors"
+        class="group relative mt-8 overflow-hidden border border-karma-purple-500/35 bg-karma-black p-6 transition-colors hover:border-karma-purple-400/60 md:p-8"
       >
         <div class="pointer-events-none absolute inset-0 bg-karma-radial opacity-60" />
 
         <div class="relative grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
           <div>
             <div class="flex flex-wrap items-center gap-3 mb-4">
-              <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-karma-purple-500/15 text-karma-lilac-300 border border-karma-purple-500/30">
-                CASO DE ESTUDIO PRIVADO
+              <span class="border-l border-karma-purple-400 pl-3 text-[10px] font-mono tracking-wider text-karma-lilac-300">
+                CASO DE PRODUCTO
               </span>
-              <span class="text-xs font-mono text-karma-text-muted">Código fuente protegido</span>
+              <span class="text-xs font-mono text-karma-text-muted">Código fuente privado</span>
             </div>
 
             <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-2">
@@ -144,7 +144,7 @@ const statusLabel: Record<Project['status'], string> = {
               <span
                 v-for="tech in restaurantCaseStudy.stack"
                 :key="tech"
-                class="text-xs font-mono px-3 py-1.5 rounded-md bg-karma-void border border-karma-border text-karma-text-secondary"
+                class="border-l border-white/15 px-2 py-0.5 text-[10px] font-mono text-karma-text-secondary"
               >
                 {{ tech }}
               </span>
@@ -152,14 +152,14 @@ const statusLabel: Record<Project['status'], string> = {
 
             <a
               :href="restaurantCaseStudy.caseStudyUrl"
-              class="mt-6 inline-flex items-center gap-2 rounded-lg bg-karma-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-glow-purple transition hover:bg-karma-purple-400"
+              class="mt-6 inline-flex items-center gap-2 border border-karma-purple-400 bg-karma-purple-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-karma-purple-400"
             >
               Ver caso de estudio
               <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <div class="rounded-xl bg-karma-void/80 border border-karma-border p-5 md:p-6">
+          <div class="border border-white/10 bg-karma-void/70 p-5 md:p-6">
             <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-4">
               MÓDULOS PRINCIPALES
             </p>
@@ -169,7 +169,7 @@ const statusLabel: Record<Project['status'], string> = {
                 :key="module"
                 class="flex items-center gap-2 text-sm text-karma-text-secondary"
               >
-                <span class="w-1.5 h-1.5 shrink-0 rounded-full bg-karma-purple-400 shadow-glow-purple" />
+                <span class="h-px w-4 shrink-0 bg-karma-purple-400" />
                 {{ module }}
               </li>
             </ul>

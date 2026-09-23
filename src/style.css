@@ -9,6 +9,11 @@
 
   body {
     @apply bg-karma-black text-karma-text-primary font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 82% 8%, rgba(124, 85, 223, 0.08), transparent 24%),
+      linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: auto, 72px 72px, 72px 72px;
   }
 
   ::selection {
@@ -28,10 +33,18 @@
 
 @layer utilities {
   .text-gradient-karma {
-    @apply bg-gradient-to-r from-karma-purple-400 via-karma-lilac-300 to-karma-purple-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-karma-lilac-300 to-karma-purple-400 bg-clip-text text-transparent;
   }
 
   .section-container {
     @apply max-w-6xl mx-auto px-6 md:px-10;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.24em] text-karma-lilac-300;
+  }
+
+  .professional-card {
+    @apply border border-karma-border bg-karma-surface/70 backdrop-blur-sm;
   }
 }

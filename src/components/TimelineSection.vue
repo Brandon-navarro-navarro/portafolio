@@ -67,29 +67,27 @@ const roles: Role[] = [
 </script>
 
 <template>
-  <section id="timeline" class="py-24 border-t border-karma-border/50">
+  <section id="timeline" class="border-b border-white/10 bg-karma-void/45 py-24">
     <div class="section-container">
-      <p class="font-mono text-sm text-karma-purple-400 mb-3 tracking-widest">
-        01.5 · TRAYECTORIA
-      </p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">
+      <p class="section-eyebrow mb-4">02 · TRAYECTORIA</p>
+      <h2 class="text-3xl font-semibold tracking-tight md:text-5xl mb-14">
         Más de 7 años <span class="text-gradient-karma">construyendo ERPs</span>
       </h2>
 
       <div class="relative">
         <!-- Línea vertical del timeline -->
-        <div class="absolute left-[7px] md:left-3 top-2 bottom-2 w-px bg-karma-border" />
+        <div class="absolute left-[5px] top-2 bottom-2 w-px bg-white/10 md:left-3" />
 
         <div class="space-y-10">
           <div v-for="role in roles" :key="`${role.company}-${role.period}`" class="relative pl-8 md:pl-10">
             <!-- Punto del timeline -->
-            <span class="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full bg-karma-purple-500 border-2 border-karma-black shadow-glow-purple" />
+            <span class="absolute left-0 top-2 h-2.5 w-2.5 rotate-45 border border-karma-purple-400 bg-karma-black md:left-2" />
 
             <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-2">
-              <h3 class="text-lg font-semibold">
+              <h3 class="text-lg font-medium">
                 {{ role.title }} <span class="text-karma-text-muted font-normal">— {{ role.company }}</span>
               </h3>
-              <span class="font-mono text-xs text-karma-purple-400 whitespace-nowrap">{{ role.period }}</span>
+              <span class="font-mono text-[10px] uppercase tracking-wider text-karma-lilac-300 whitespace-nowrap">{{ role.period }}</span>
             </div>
 
             <ul class="space-y-1 mb-3">
@@ -106,7 +104,7 @@ const roles: Role[] = [
               <span
                 v-for="tech in role.stack"
                 :key="tech"
-                class="text-xs font-mono px-2 py-1 rounded-md bg-karma-void border border-karma-border text-karma-text-muted"
+                class="border-l border-white/15 px-2 py-0.5 text-[10px] font-mono text-karma-text-muted"
               >
                 {{ tech }}
               </span>

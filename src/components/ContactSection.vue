@@ -10,10 +10,10 @@ const contactLinks = [
 </script>
 
 <template>
-  <section id="contact" class="py-24 border-t border-karma-border/50">
+  <section id="contact" class="py-24">
     <div class="section-container text-center">
-      <p class="font-mono text-sm text-karma-purple-400 mb-3 tracking-widest">04 · CONTACTO</p>
-      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+      <p class="section-eyebrow mb-4">06 · CONTACTO</p>
+      <h2 class="text-3xl font-semibold tracking-tight md:text-5xl mb-6">
         Hablemos de tu <span class="text-gradient-karma">próximo proyecto</span>
       </h2>
       <p class="text-karma-text-secondary max-w-lg mx-auto mb-10">
@@ -27,7 +27,7 @@ const contactLinks = [
           :href="link.href"
           target="_blank"
           rel="noopener"
-          class="px-6 py-3 rounded-lg bg-karma-surface border border-karma-border hover:border-karma-purple-400 transition-colors text-sm"
+          class="border border-white/10 bg-karma-surface/50 px-6 py-4 text-left text-sm transition-colors hover:border-karma-purple-400/60"
         >
           <span class="text-karma-text-muted font-mono text-xs block mb-0.5">{{ link.label }}</span>
           <span class="text-karma-text-primary">{{ link.value }}</span>

@@ -35,16 +35,15 @@ const approach: Approach[] = [
 </script>
 
 <template>
-  <section id="about" class="py-24 border-t border-karma-border/50">
+  <section id="about" class="border-b border-white/10 py-24">
     <div class="section-container grid md:grid-cols-2 gap-12 items-start">
       <div>
-        <p class="font-mono text-sm text-karma-purple-400 mb-3 tracking-widest">01 · SOBRE MÍ</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Construyo sistemas que <span class="text-gradient-karma">conectan</span>
+        <p class="section-eyebrow mb-4">01 · PERFIL</p>
+        <h2 class="text-3xl font-semibold tracking-tight md:text-5xl">
+          Criterio técnico con <span class="text-gradient-karma">visión de negocio.</span>
         </h2>
 
-        <span class="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-karma-void border border-karma-border text-xs font-mono text-karma-text-secondary">
-          <span class="w-1.5 h-1.5 rounded-full bg-karma-purple-400 animate-pulse" />
+        <span class="mb-7 mt-6 inline-flex items-center gap-3 border-l border-karma-purple-400 pl-3 text-xs font-mono text-karma-text-secondary">
           ISP Consulting · Cliente: Intercorp Retail
         </span>
 
@@ -62,25 +61,25 @@ const approach: Approach[] = [
 
       <div>
         <!-- Stats rápidas -->
-        <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="grid grid-cols-3 border border-white/10">
           <div
             v-for="stat in stats"
             :key="stat.label"
-            class="rounded-xl bg-karma-surface border border-karma-border p-6 text-center"
+            class="border-r border-white/10 p-5 text-left last:border-r-0 md:p-6"
           >
-            <p class="text-2xl md:text-3xl font-bold text-gradient-karma mb-1">{{ stat.value }}</p>
-            <p class="text-xs text-karma-text-muted">{{ stat.label }}</p>
+            <p class="text-2xl font-semibold text-white md:text-3xl">{{ stat.value }}</p>
+            <p class="mt-2 text-[10px] uppercase leading-4 tracking-wider text-karma-text-muted">{{ stat.label }}</p>
           </div>
         </div>
 
         <!-- Cómo trabajo: enfoque, no tecnologías (eso ya está en Stack) -->
-        <div class="grid grid-cols-2 gap-4">
+        <div class="mt-5 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">
           <div
             v-for="item in approach"
             :key="item.title"
-            class="rounded-xl bg-karma-surface border border-karma-border p-5 hover:border-karma-purple-400/60 transition-colors"
+            class="bg-karma-black p-5 transition-colors hover:bg-karma-void"
           >
-            <h3 class="text-sm font-semibold text-karma-lilac-300 mb-1.5">{{ item.title }}</h3>
+            <h3 class="mb-2 text-sm font-semibold text-white">{{ item.title }}</h3>
             <p class="text-xs text-karma-text-muted leading-relaxed">{{ item.description }}</p>
           </div>
         </div>
