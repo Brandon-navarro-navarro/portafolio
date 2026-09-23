@@ -123,6 +123,9 @@ con pulsos va en STACK. No mezclarlos.**
    reactivo/funcional) y el caso de integración AliExpress–Serhafen–Dinet.
    Debajo se muestra el ERP Vertical de Restaurante como caso de estudio
    privado: alcance funcional, módulos y stack, sin repositorio ni código.
+   La tarjeta enlaza a la ficha detallada multipágina
+   `/proyectos/restaurante/`, que presenta propuesta, capacidades,
+   arquitectura y roadmap con enfoque comercial/técnico.
 7. `ContactSection.vue` — **datos reales** ya cargados: email
    (brandon.153120@gmail.com) y LinkedIn. Falta el usuario real de GitHub
    (sigue como placeholder, no estaba en el CV).
@@ -178,3 +181,14 @@ npm run dev
 Cada push a `main` ejecuta `.github/workflows/deploy-pages.yml` y publica el
 contenido compilado en GitHub Pages.
 Vite automáticamente (build: `npm run build`, output: `dist`).
+
+## Caso de estudio y demo de Mesa
+- La ficha pública vive en `proyectos/restaurante/index.html` y monta
+  `src/RestaurantCaseStudy.vue` como una segunda entrada de Vite.
+- La demo compilada vive en `public/demos/mesa/`. Solo se publica el build
+  estático: no se incluye el repositorio original, documentación interna,
+  mapas de fuente ni enlaces a cuentas alternas.
+- La guía interna de componentes se excluyó de esta distribución pública.
+- El caso separa explícitamente lo disponible, lo que está en integración y
+  las capacidades de roadmap para no presentar funciones incompletas como
+  terminadas.

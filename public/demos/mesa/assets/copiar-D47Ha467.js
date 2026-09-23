@@ -1,0 +1,1 @@
+function e(e){return e===void 0?e:JSON.parse(JSON.stringify(e))}export{e as t};

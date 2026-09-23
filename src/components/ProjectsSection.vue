@@ -48,6 +48,7 @@ const restaurantCaseStudy = {
     'Reportes operativos',
   ],
   stack: ['C# / .NET', 'API REST', 'SQL Server', 'Vue.js'],
+  caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/restaurante/`,
 }
 
 const statusLabel: Record<Project['status'], string> = {
@@ -148,6 +149,14 @@ const statusLabel: Record<Project['status'], string> = {
                 {{ tech }}
               </span>
             </div>
+
+            <a
+              :href="restaurantCaseStudy.caseStudyUrl"
+              class="mt-6 inline-flex items-center gap-2 rounded-lg bg-karma-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-glow-purple transition hover:bg-karma-purple-400"
+            >
+              Ver caso de estudio
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
           <div class="rounded-xl bg-karma-void/80 border border-karma-border p-5 md:p-6">
