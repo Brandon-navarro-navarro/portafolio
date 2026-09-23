@@ -51,6 +51,8 @@ const restaurantCaseStudy = {
   caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/restaurante/`,
 }
 
+const restaurantIconUrl = `${import.meta.env.BASE_URL}restaurant-flame.svg`
+
 const statusLabel: Record<Project['status'], string> = {
   live: 'En producción',
   completed: 'Completado',
@@ -123,14 +125,22 @@ const statusLabel: Record<Project['status'], string> = {
 
         <div class="relative grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
           <div>
-            <div class="flex flex-wrap items-center gap-3 mb-4">
-              <span class="border-l border-karma-purple-400 pl-3 text-[10px] font-mono tracking-wider text-karma-lilac-300">
-                CASO DE PRODUCTO
-              </span>
-              <span class="text-xs font-mono text-karma-text-muted">Código fuente privado</span>
+            <div class="mb-5 flex items-start justify-between gap-5">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="border-l border-[#f47526] pl-3 text-[10px] font-mono tracking-wider text-[#ffb45f]">
+                  CASO DE PRODUCTO
+                </span>
+                <span class="text-xs font-mono text-karma-text-muted">Código fuente privado</span>
+              </div>
+              <img
+                :src="restaurantIconUrl"
+                alt=""
+                aria-hidden="true"
+                class="h-20 w-20 shrink-0 object-contain md:h-24 md:w-24"
+              />
             </div>
 
-            <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-2">
+            <p class="font-mono text-xs text-[#f47526] tracking-widest mb-2">
               VERTICAL ERP / RESTAURANTE
             </p>
             <h3 class="text-2xl md:text-3xl font-bold mb-3 group-hover:text-karma-lilac-300 transition-colors">

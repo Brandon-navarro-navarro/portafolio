@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const portfolioUrl = import.meta.env.BASE_URL
 const demoUrl = `${import.meta.env.BASE_URL}demos/mesa/#/login?redirect=/dashboard`
+const restaurantIconUrl = `${import.meta.env.BASE_URL}restaurant-flame.svg`
 
 const capabilities = [
   {
@@ -97,11 +98,18 @@ const roadmap = [
       <div class="absolute -right-40 top-20 h-96 w-96 rounded-full bg-karma-lilac-300/10 blur-[120px]" />
       <div class="section-container relative grid gap-14 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <div class="mb-6 flex flex-wrap items-center gap-3">
-            <span class="rounded-full border border-karma-purple-400/40 bg-karma-purple-500/10 px-3 py-1 font-mono text-xs text-karma-lilac-300">
-              CASO DE ESTUDIO
-            </span>
-            <span class="font-mono text-xs text-karma-text-muted">VERTICAL ERP / RESTAURANTE</span>
+          <div class="mb-7 flex items-center gap-5">
+            <img
+              :src="restaurantIconUrl"
+              alt="Símbolo de la vertical de restaurante"
+              class="h-24 w-24 shrink-0 object-contain md:h-28 md:w-28"
+            />
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="rounded-full border border-[#f47526]/50 bg-[#f47526]/10 px-3 py-1 font-mono text-xs text-[#ffb45f]">
+                CASO DE ESTUDIO
+              </span>
+              <span class="font-mono text-xs text-karma-text-muted">VERTICAL ERP / RESTAURANTE</span>
+            </div>
           </div>
           <h1 class="max-w-3xl text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">
             Operación gastronómica,
