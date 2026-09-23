@@ -5,17 +5,17 @@ const pillars = [
   {
     title: 'Arquitectura backend',
     description: 'Servicios empresariales, reglas de negocio y APIs con foco principal en el ecosistema .NET.',
-    variant: 'orbit' as const,
+    variant: 'architecture' as const,
   },
   {
     title: 'Integración de sistemas',
     description: 'Flujos entre ERP, comercio electrónico, mensajería y servicios cloud con trazabilidad.',
-    variant: 'link' as const,
+    variant: 'integration' as const,
   },
   {
     title: 'Entrega de producto',
     description: 'Análisis funcional, interfaces, calidad y acompañamiento desde el requerimiento hasta producción.',
-    variant: 'layers' as const,
+    variant: 'product' as const,
   },
 ]
 

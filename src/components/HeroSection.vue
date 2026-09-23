@@ -2,9 +2,9 @@
 import ProfessionalMark from '@/components/ProfessionalMark.vue'
 
 const disciplines = [
-  { label: 'Arquitectura', detail: 'ERP · APIs', variant: 'orbit' as const },
-  { label: 'Integraciones', detail: 'Azure · Retail', variant: 'link' as const },
-  { label: 'Producto', detail: '.NET · Vue', variant: 'layers' as const },
+  { label: 'Arquitectura', detail: 'ERP · APIs', variant: 'architecture' as const },
+  { label: 'Integraciones', detail: 'Azure · Retail', variant: 'integration' as const },
+  { label: 'Producto', detail: '.NET · Vue', variant: 'product' as const },
 ]
 </script>
 
