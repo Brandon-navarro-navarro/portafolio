@@ -1,15 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" fill="none">
   <defs>
-    <linearGradient id="m" x1="6" y1="6" x2="25" y2="27" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fff"/><stop offset=".5" stop-color="#797b84"/><stop offset="1" stop-color="#e5e6ea"/>
+    <linearGradient id="silverTop" x1="252" y1="250" x2="683" y2="599" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2F5FA"/><stop offset="0.48" stop-color="#C9CEDB"/><stop offset="1" stop-color="#8F97AE"/>
     </linearGradient>
-    <linearGradient id="v" x1="9" y1="6" x2="26" y2="27" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#b79bff"/><stop offset=".55" stop-color="#7650d8"/><stop offset="1" stop-color="#37255f"/>
+    <linearGradient id="silverMid" x1="252" y1="510" x2="586" y2="866" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F3F6FB"/><stop offset="0.55" stop-color="#CCD2DE"/><stop offset="1" stop-color="#A5ACBC"/>
+    </linearGradient>
+    <linearGradient id="charcoal" x1="259" y1="1005" x2="683" y2="744" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#20283B"/><stop offset="0.45" stop-color="#46506C"/><stop offset="1" stop-color="#66718D"/>
+    </linearGradient>
+    <linearGradient id="purpleBand" x1="575" y1="420" x2="944" y2="823" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B24BFF"/><stop offset="0.25" stop-color="#7C2FFF"/><stop offset="0.7" stop-color="#3628F0"/><stop offset="1" stop-color="#1B2AC0"/>
+    </linearGradient>
+    <linearGradient id="blueFin" x1="824" y1="300" x2="1014" y2="1017" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EA3FF"/><stop offset="0.3" stop-color="#3F4BFF"/><stop offset="1" stop-color="#0E1B63"/>
     </linearGradient>
   </defs>
-  <rect width="32" height="32" rx="5" fill="#08090d"/>
-  <path d="M6 9l9 6v6l-9-6V9z" fill="url(#m)"/>
-  <path d="M15.5 15.2l8-5v6l-8 5v-6z" fill="url(#v)"/>
-  <path d="M10 17l9 5.5V28l-9-5.5V17z" fill="url(#m)"/>
-  <path d="M19.5 22l7.5-4.5V23l-7.5 5v-6z" fill="url(#v)"/>
+  <path d="M576 415 L829 415 L1013 300 L1013 776 L576 776 Z" fill="url(#purpleBand)"/>
+  <path d="M576 601 L1013 1017 L1013 776 L576 415 Z" fill="url(#purpleBand)"/>
+  <path d="M824 430 L1013 300 L1013 1017 L824 815 Z" fill="url(#blueFin)"/>
+  <path d="M252 257 L576 431 C597 443 607 462 607 484 C607 513 595 540 570 565 L468 654 L468 571 L607 484 L252 418 Z" fill="url(#silverTop)"/>
+  <path d="M468 571 L607 484 L607 547 C607 589 594 621 566 648 L468 571 Z" fill="#394158" fill-opacity="0.95"/>
+  <path d="M252 511 L575 698 L252 874 Z" fill="url(#silverMid)"/>
+  <path d="M250 1004 L488 1004 C531 1004 565 990 594 959 L676 874 L676 818 C676 786 665 766 643 749 L575 698 L417 785 L493 785 C520 785 530 811 511 826 L250 1004 Z" fill="url(#charcoal)"/>
 </svg>

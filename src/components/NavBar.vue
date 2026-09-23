@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import ProfessionalMark from '@/components/ProfessionalMark.vue'
+
+const brandLogoUrl = `${import.meta.env.BASE_URL}favicon.svg`
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
@@ -28,7 +29,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   >
     <nav class="section-container flex items-center justify-between h-16">
       <a href="#hero" class="flex items-center gap-2.5" aria-label="Ir al inicio">
-        <ProfessionalMark variant="layers" uid="nav-mark" :size="28" />
+        <img :src="brandLogoUrl" alt="" class="h-8 w-8 object-contain" />
         <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white">Brandon Navarro</span>
       </a>
 

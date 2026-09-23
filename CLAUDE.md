@@ -77,6 +77,8 @@ glows permanentes y tarjetas demasiado redondeadas.
 `layers`) usados como sistema visual para Arquitectura, Integraciones y
 Producto. Los degradados y sombras deben ser controlados; el contenido,
 jerarquía tipográfica y espacio negativo tienen prioridad sobre la animación.
+La marca principal entregada por Brandon vive en `public/favicon.svg` y se usa
+tanto como favicon del navegador como en el encabezado del portafolio.
 
 ## Estructura de secciones (single-page, scroll con anchors)
 1. `HeroSection.vue` — propuesta profesional, CTA y tres símbolos metálicos
