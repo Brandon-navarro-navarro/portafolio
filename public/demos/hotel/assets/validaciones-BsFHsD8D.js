@@ -1,0 +1,1 @@
+function e(e){return/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)}function t(e){let t={};for(let n of e)n.abierto&&(!/^\d{2}:\d{2}$/.test(n.apertura)||!/^\d{2}:\d{2}$/.test(n.cierre)?t[n.dia]=`Indica la hora de apertura y de cierre.`:n.apertura===n.cierre&&(t[n.dia]=`La apertura y el cierre no pueden coincidir.`));return t}export{t as n,e as t};

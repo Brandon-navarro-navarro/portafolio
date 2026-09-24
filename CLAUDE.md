@@ -134,11 +134,12 @@ Vite automáticamente (build: `npm run build`, output: `dist`).
   las capacidades de roadmap para no presentar funciones incompletas como
   terminadas.
 
-## Casos de estudio de Alba y Torque
+## Casos de estudio y demos de Alba y Torque
 - Las fichas viven en `/proyectos/hotel/` y `/proyectos/taller/`; ambas montan
   `VerticalCaseStudy.vue` con la configuración de su vertical.
 - Logos, paletas, textos funcionales y estado se basan en los repositorios
   públicos `Kreyshin/KM.WEB.HOTEL` y `Kreyshin/KM.WEB.TALLER.AUTO`.
-- Las demos y la documentación continúan alojadas en GitHub Pages de cada
-  producto. Los casos dejan explícito qué está terminado y qué sigue en
-  evolución.
+- Los builds oficiales de las demos se publican dentro del portafolio en
+  `public/demos/hotel/` y `public/demos/taller/`, con rutas hash y datos
+  ficticios. La documentación y el código fuente siguen enlazando a los
+  repositorios públicos de cada producto.

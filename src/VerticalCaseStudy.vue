@@ -21,7 +21,7 @@ const studies = {
     ink: '#0f1724',
     logo: 'https://raw.githubusercontent.com/Kreyshin/KM.WEB.HOTEL/main/LogoSystem.png',
     logoAlt: 'Alba, gestión hotelera',
-    demo: 'https://kreyshin.github.io/KM.WEB.HOTEL/demo/',
+    demo: `${import.meta.env.BASE_URL}demos/hotel/#/login`,
     docs: 'https://kreyshin.github.io/KM.WEB.HOTEL/',
     repo: 'https://github.com/Kreyshin/KM.WEB.HOTEL',
     metrics: [
@@ -65,7 +65,7 @@ const studies = {
     ink: '#0f1726',
     logo: 'https://raw.githubusercontent.com/Kreyshin/KM.WEB.TALLER.AUTO/main/TallerSystem.png',
     logoAlt: 'Torque, gestión de taller mecánico',
-    demo: 'https://kreyshin.github.io/KM.WEB.TALLER.AUTO/demo/',
+    demo: `${import.meta.env.BASE_URL}demos/taller/#/login`,
     docs: 'https://kreyshin.github.io/KM.WEB.TALLER.AUTO/',
     repo: 'https://github.com/Kreyshin/KM.WEB.TALLER.AUTO',
     metrics: [
