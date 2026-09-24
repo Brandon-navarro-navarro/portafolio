@@ -15,6 +15,8 @@ export default defineConfig({
       input: {
         main: path.resolve(import.meta.dirname, 'index.html'),
         restaurant: path.resolve(import.meta.dirname, 'proyectos/restaurante/index.html'),
+        hotel: path.resolve(import.meta.dirname, 'proyectos/hotel/index.html'),
+        taller: path.resolve(import.meta.dirname, 'proyectos/taller/index.html'),
       },
     },
   },

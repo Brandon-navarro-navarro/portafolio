@@ -98,11 +98,11 @@ tanto como favicon del navegador como en el encabezado del portafolio.
 6. `ProjectsSection.vue` — 3 proyectos principales: Reto Técnico Interbank,
    IDM Product Service (ambos repositorios backend públicos con Java
    reactivo/funcional) y el caso de integración AliExpress–Serhafen–Dinet.
-   Debajo se muestra el ERP Vertical de Restaurante como caso de estudio
-    con código fuente privado: alcance funcional, módulos y stack.
-   La tarjeta enlaza a la ficha detallada multipágina
-   `/proyectos/restaurante/`, que presenta propuesta, capacidades,
-   arquitectura y roadmap con enfoque comercial/técnico.
+   Debajo se muestran tres verticales ERP como casos de producto: Mesa
+   (restaurante), Alba (hotelería) y Torque (taller automotriz). Cada tarjeta
+   enlaza a una ficha detallada multipágina con propuesta, capacidades,
+   arquitectura y estado real del producto. Alba y Torque enlazan además a
+   sus repositorios y demos públicas.
 7. `ContactSection.vue` — datos reales: email, LinkedIn y GitHub.
 8. `FooterBar.vue`
 
@@ -133,3 +133,12 @@ Vite automáticamente (build: `npm run build`, output: `dist`).
 - El caso separa explícitamente lo disponible, lo que está en integración y
   las capacidades de roadmap para no presentar funciones incompletas como
   terminadas.
+
+## Casos de estudio de Alba y Torque
+- Las fichas viven en `/proyectos/hotel/` y `/proyectos/taller/`; ambas montan
+  `VerticalCaseStudy.vue` con la configuración de su vertical.
+- Logos, paletas, textos funcionales y estado se basan en los repositorios
+  públicos `Kreyshin/KM.WEB.HOTEL` y `Kreyshin/KM.WEB.TALLER.AUTO`.
+- Las demos y la documentación continúan alojadas en GitHub Pages de cada
+  producto. Los casos dejan explícito qué está terminado y qué sigue en
+  evolución.
