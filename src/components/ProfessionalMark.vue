@@ -22,7 +22,14 @@ defineProps<{
         <stop offset="0.7" stop-color="#8D95A5" />
         <stop offset="1" stop-color="#E0E4EB" />
       </linearGradient>
-      <linearGradient :id="`${uid}-silver-dark`" x1="30" y1="125" x2="118" y2="45" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        :id="`${uid}-silver-dark`"
+        x1="30"
+        y1="125"
+        x2="118"
+        y2="45"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop stop-color="#596171" />
         <stop offset="0.58" stop-color="#AAB1BD" />
         <stop offset="1" stop-color="#EEF1F6" />
@@ -32,7 +39,14 @@ defineProps<{
         <stop offset="0.48" stop-color="#7156E7" />
         <stop offset="1" stop-color="#3D32B2" />
       </linearGradient>
-      <linearGradient :id="`${uid}-violet-dark`" x1="49" y1="120" x2="118" y2="47" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        :id="`${uid}-violet-dark`"
+        x1="49"
+        y1="120"
+        x2="118"
+        y2="47"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop stop-color="#29215F" />
         <stop offset="0.55" stop-color="#5540B8" />
         <stop offset="1" stop-color="#8F79F6" />

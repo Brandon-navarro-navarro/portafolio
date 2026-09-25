@@ -27,18 +27,24 @@ const integrations: Integration[] = [
         Conectando <span class="text-gradient-karma">plataformas reales</span>
       </h2>
       <p class="text-karma-text-secondary max-w-xl mb-12">
-        Integraciones de e-commerce y marketplace a nivel de proveedor, con
-        trazabilidad end-to-end y cumplimiento de SLA en retail a gran escala.
+        Integraciones de e-commerce y marketplace a nivel de proveedor, con trazabilidad end-to-end y
+        cumplimiento de SLA en retail a gran escala.
       </p>
 
-      <div class="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+      <div
+        class="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4"
+      >
         <div
           v-for="item in integrations"
           :key="item.name"
           class="group relative min-h-[190px] overflow-hidden bg-karma-black p-6 text-left transition-colors hover:bg-karma-void"
         >
-          <span class="relative font-mono text-[10px] tracking-[0.2em] text-karma-text-muted">{{ item.code }}</span>
-          <div class="absolute right-0 top-0 h-px w-0 bg-karma-purple-400 transition-all duration-300 group-hover:w-full" />
+          <span class="relative font-mono text-[10px] tracking-[0.2em] text-karma-text-muted">{{
+            item.code
+          }}</span>
+          <div
+            class="absolute right-0 top-0 h-px w-0 bg-karma-purple-400 transition-all duration-300 group-hover:w-full"
+          />
           <p class="relative mt-16 text-base font-semibold text-white md:text-lg">
             {{ item.name }}
           </p>

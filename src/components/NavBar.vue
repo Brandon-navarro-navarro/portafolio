@@ -5,6 +5,7 @@ const brandLogoUrl = `${import.meta.env.BASE_URL}favicon.svg`
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
+const menuButton = ref<HTMLButtonElement | null>(null)
 
 const links = [
   { label: 'Perfil', href: '#about' },
@@ -18,8 +19,29 @@ function onScroll() {
   scrolled.value = window.scrollY > 20
 }
 
-onMounted(() => window.addEventListener('scroll', onScroll))
-onUnmounted(() => window.removeEventListener('scroll', onScroll))
+function onKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape' && menuOpen.value) {
+    menuOpen.value = false
+    menuButton.value?.focus()
+  }
+}
+
+function onResize() {
+  if (window.innerWidth >= 768) menuOpen.value = false
+}
+
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('keydown', onKeydown)
+  window.addEventListener('resize', onResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('keydown', onKeydown)
+  window.removeEventListener('resize', onResize)
+})
 </script>
 
 <template>
@@ -42,9 +64,13 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
       </ul>
 
       <button
+        ref="menuButton"
+        type="button"
         class="md:hidden text-karma-text-primary"
         @click="menuOpen = !menuOpen"
-        aria-label="Abrir menú"
+        :aria-label="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+        :aria-expanded="menuOpen"
+        aria-controls="mobile-navigation"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -62,6 +88,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
     >
       <ul
         v-if="menuOpen"
+        id="mobile-navigation"
         class="md:hidden flex flex-col gap-1 bg-karma-void border-b border-karma-border px-6 py-4"
       >
         <li v-for="link in links" :key="link.href">

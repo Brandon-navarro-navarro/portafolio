@@ -81,13 +81,18 @@ const roles: Role[] = [
         <div class="space-y-10">
           <div v-for="role in roles" :key="`${role.company}-${role.period}`" class="relative pl-8 md:pl-10">
             <!-- Punto del timeline -->
-            <span class="absolute left-0 top-2 h-2.5 w-2.5 rotate-45 border border-karma-purple-400 bg-karma-black md:left-2" />
+            <span
+              class="absolute left-0 top-2 h-2.5 w-2.5 rotate-45 border border-karma-purple-400 bg-karma-black md:left-2"
+            />
 
             <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-2">
               <h3 class="text-lg font-medium">
                 {{ role.title }} <span class="text-karma-text-muted font-normal">— {{ role.company }}</span>
               </h3>
-              <span class="font-mono text-[10px] uppercase tracking-wider text-karma-lilac-300 whitespace-nowrap">{{ role.period }}</span>
+              <span
+                class="font-mono text-[10px] uppercase tracking-wider text-karma-lilac-300 whitespace-nowrap"
+                >{{ role.period }}</span
+              >
             </div>
 
             <ul class="space-y-1 mb-3">

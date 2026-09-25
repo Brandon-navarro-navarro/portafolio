@@ -1,6 +1,7 @@
 # Contexto del proyecto — Portafolio de Brandon Navarro
 
 ## Quién es el usuario
+
 Brandon Navarro, Senior Technical Analyst y Full Stack Developer con 7+ años de
 experiencia en desarrollo ERP e integraciones de sistemas (desde marzo 2018,
 según su CV). Basado en Villa María del Triunfo, Lima, Perú. Se comunica en
@@ -14,6 +15,7 @@ Desde junio de 2026 trabaja como **Analista Programador Senior en ISP
 Consulting**, asignado al cliente **Intercorp Retail**.
 
 ## Experiencia laboral real (del CV, más reciente primero)
+
 1. **Analista Programador Senior — ISP Consulting, cliente Intercorp Retail**
    (Jun 2026 – actualidad): análisis de sistemas de software y Vue.js, en
    modalidad híbrida.
@@ -37,11 +39,13 @@ es un dato más sensible para dejar indexable en una web pública; si Brandon
 lo pide explícitamente, agregarlo ahí.
 
 ## Qué es este proyecto
+
 Portafolio personal de desarrollador Full Stack, construido con Vue 3 +
 TypeScript + Vite + Tailwind CSS y publicado con GitHub Actions en GitHub
 Pages: `https://brandon-navarro-navarro.github.io/portafolio/`.
 
 ## Identidad de marca — MUY IMPORTANTE
+
 Brandon tiene un proyecto personal más grande llamado **Karma Corp** (una
 plataforma ERP personal para el mercado de Gamarra/Lima). La paleta de colores
 de Karma Corp **es también la paleta de este portafolio**, porque es su sello
@@ -52,6 +56,7 @@ personal de marca:
 - **Lilas** (acentos secundarios, hover states, texto destacado)
 
 Los tokens ya están definidos en `tailwind.config.js` bajo `colors.karma.*`:
+
 - `karma.black` (#08090d) — fondo base neutro
 - `karma.void` (#0e1016) — fondo de secciones
 - `karma.surface` (#141620) — cards/superficies elevadas
@@ -67,6 +72,7 @@ se conecta este portafolio con Karma Corp (por ejemplo, mostrándolo como
 proyecto destacado), la coherencia visual entre ambos es intencional.
 
 ## Dirección visual actual
+
 El portafolio usa un lenguaje editorial y tecnológico sobrio. La referencia
 principal son símbolos abstractos con volumen metálico, plata y morado sobre
 un fondo negro neutro. Evitar efectos que parezcan videojuegos: órbitas de
@@ -81,6 +87,7 @@ La marca principal entregada por Brandon vive en `public/favicon.svg` y se usa
 tanto como favicon del navegador como en el encabezado del portafolio.
 
 ## Estructura de secciones (single-page, scroll con anchors)
+
 1. `HeroSection.vue` — propuesta profesional, CTA y tres símbolos metálicos
    para Arquitectura, Integraciones y Producto.
 2. `AboutSection.vue` — bio corta + stats rápidas + 4 tarjetas de "cómo
@@ -107,23 +114,25 @@ tanto como favicon del navegador como en el encabezado del portafolio.
 8. `FooterBar.vue`
 
 ## Pendientes / placeholders a completar con Brandon
-- **Teléfono de contacto**: deliberadamente omitido de `ContactSection.vue`
-  (ver nota arriba) — agregar solo si Brandon lo pide explícitamente.
+
 - **Dominio**: decidir si se mantiene GitHub Pages o se compra un dominio
   propio tipo `.dev` más adelante.
 
 ## Cómo correr el proyecto
+
 ```bash
 npm install
 npm run dev
 ```
 
 ## Deploy
+
 Cada push a `main` ejecuta `.github/workflows/deploy-pages.yml` y publica el
 contenido compilado en GitHub Pages.
 Vite automáticamente (build: `npm run build`, output: `dist`).
 
 ## Caso de estudio y demo de Mesa
+
 - La ficha pública vive en `proyectos/restaurante/index.html` y monta
   `src/RestaurantCaseStudy.vue` como una segunda entrada de Vite.
 - La demo compilada vive en `public/demos/mesa/`. Solo se publica el build
@@ -135,10 +144,13 @@ Vite automáticamente (build: `npm run build`, output: `dist`).
   terminadas.
 
 ## Casos de estudio y demos de Alba y Torque
+
 - Las fichas viven en `/proyectos/hotel/` y `/proyectos/taller/`; ambas montan
   `VerticalCaseStudy.vue` con la configuración de su vertical.
 - Logos, paletas, textos funcionales y estado se basan en los repositorios
-  públicos `Kreyshin/KM.WEB.HOTEL` y `Kreyshin/KM.WEB.TALLER.AUTO`.
+  públicos `Kreyshin/KM.WEB.HOTEL` y `Kreyshin/KM.WEB.TALLER.AUTO`. Los logos
+  públicos se sincronizaron en `public/alba-logo.png` y
+  `public/torque-logo.png` para no depender de GitHub en tiempo de carga.
 - Los builds oficiales de las demos se publican dentro del portafolio en
   `public/demos/hotel/` y `public/demos/taller/`, con rutas hash y datos
   ficticios. La documentación y el código fuente siguen enlazando a los

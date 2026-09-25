@@ -17,11 +17,13 @@ interface Approach {
 const approach: Approach[] = [
   {
     title: 'De punta a punta',
-    description: 'Desde el levantamiento de requerimientos hasta el despliegue en producción, sin soltar el hilo del proyecto.',
+    description:
+      'Desde el levantamiento de requerimientos hasta el despliegue en producción, sin soltar el hilo del proyecto.',
   },
   {
     title: 'Legacy → moderno',
-    description: 'Especialista en migrar sistemas antiguos a arquitecturas actuales sin frenar la operación del negocio.',
+    description:
+      'Especialista en migrar sistemas antiguos a arquitecturas actuales sin frenar la operación del negocio.',
   },
   {
     title: 'Liderazgo técnico',
@@ -29,7 +31,8 @@ const approach: Approach[] = [
   },
   {
     title: 'Comunicación directa',
-    description: 'Traduzco entre negocio y desarrollo: lo que pide el cliente y lo que el sistema realmente necesita.',
+    description:
+      'Traduzco entre negocio y desarrollo: lo que pide el cliente y lo que el sistema realmente necesita.',
   },
 ]
 </script>
@@ -43,19 +46,21 @@ const approach: Approach[] = [
           Criterio técnico con <span class="text-gradient-karma">visión de negocio.</span>
         </h2>
 
-        <span class="mb-7 mt-6 inline-flex items-center gap-3 border-l border-karma-purple-400 pl-3 text-xs font-mono text-karma-text-secondary">
+        <span
+          class="mb-7 mt-6 inline-flex items-center gap-3 border-l border-karma-purple-400 pl-3 text-xs font-mono text-karma-text-secondary"
+        >
           ISP Consulting · Cliente: Intercorp Retail
         </span>
 
         <p class="text-karma-text-secondary leading-relaxed mb-4">
-          Soy Analista Programador Senior y Full Stack Developer con más de 7 años de experiencia
-          en desarrollo de sistemas ERP e integraciones. Mi principal fortaleza está en C#/.NET,
-          complementada con experiencia en Java y Spring para servicios backend reactivos.
+          Soy Analista Programador Senior y Full Stack Developer con más de 7 años de experiencia en
+          desarrollo de sistemas ERP e integraciones. Mi principal fortaleza está en C#/.NET, complementada
+          con experiencia en Java y Spring para servicios backend reactivos.
         </p>
         <p class="text-karma-text-secondary leading-relaxed">
-          Desarrollo APIs, lógica de negocio e integraciones entre plataformas, además de
-          interfaces modernas con Angular y Vue. Trabajo con SQL Server, Oracle y PostgreSQL,
-          y despliego soluciones con Azure y Docker.
+          Desarrollo APIs, lógica de negocio e integraciones entre plataformas, además de interfaces modernas
+          con Angular y Vue. Trabajo con SQL Server, Oracle y PostgreSQL, y despliego soluciones con Azure y
+          Docker.
         </p>
       </div>
 
@@ -68,7 +73,9 @@ const approach: Approach[] = [
             class="border-r border-white/10 p-5 text-left last:border-r-0 md:p-6"
           >
             <p class="text-2xl font-semibold text-white md:text-3xl">{{ stat.value }}</p>
-            <p class="mt-2 text-[10px] uppercase leading-4 tracking-wider text-karma-text-muted">{{ stat.label }}</p>
+            <p class="mt-2 text-[10px] uppercase leading-4 tracking-wider text-karma-text-muted">
+              {{ stat.label }}
+            </p>
           </div>
         </div>
 

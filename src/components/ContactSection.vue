@@ -4,8 +4,16 @@
 // lo quiere igual, puede agregarlo aquí manualmente.
 const contactLinks = [
   { label: 'Email', value: 'brandon.153120@gmail.com', href: 'mailto:brandon.153120@gmail.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/brandon-navarro-navarro', href: 'https://www.linkedin.com/in/brandon-navarro-navarro-3364a8125' },
-  { label: 'GitHub', value: 'github.com/Brandon-navarro-navarro', href: 'https://github.com/Brandon-navarro-navarro' },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/brandon-navarro-navarro',
+    href: 'https://www.linkedin.com/in/brandon-navarro-navarro-3364a8125',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/Brandon-navarro-navarro',
+    href: 'https://github.com/Brandon-navarro-navarro',
+  },
 ]
 </script>
 
