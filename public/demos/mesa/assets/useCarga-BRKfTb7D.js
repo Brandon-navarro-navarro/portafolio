@@ -1,0 +1,1 @@
+import{X as e}from"./runtime-core.esm-bundler-DmioI-vP.js";function t(){let t=e(!0),n=e(!1),r=!1;async function i(e){r?n.value=!0:t.value=!0;try{return await e()}finally{r=!0,t.value=!1,n.value=!1}}function a(){r?n.value=!0:t.value=!0}function o(){r=!0,t.value=!1,n.value=!1}return{cargando:t,refrescando:n,con:i,iniciar:a,terminar:o}}export{t};
