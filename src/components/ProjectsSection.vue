@@ -56,7 +56,6 @@ const caseStudies = [
     logoAlt: 'Símbolo de Mesa',
     accent: '#f47526',
     accentSoft: '#ffb45f',
-    repository: 'Código fuente privado',
   },
   {
     eyebrow: 'VERTICAL ERP / HOTELERÍA',
@@ -78,7 +77,6 @@ const caseStudies = [
     logoAlt: 'Alba, gestión hotelera',
     accent: '#00aed6',
     accentSoft: '#4e9bf7',
-    repository: 'Repositorio público',
   },
   {
     eyebrow: 'VERTICAL ERP / TALLER AUTOMOTRIZ',
@@ -100,7 +98,6 @@ const caseStudies = [
     logoAlt: 'Torque, gestión de taller mecánico',
     accent: '#fd263f',
     accentSoft: '#5e87b8',
-    repository: 'Repositorio público',
   },
 ]
 
@@ -195,7 +192,6 @@ const statusLabel: Record<Project['status'], string> = {
                   >
                     CASO DE PRODUCTO
                   </span>
-                  <span class="text-xs font-mono text-karma-text-muted">{{ caseStudy.repository }}</span>
                 </div>
                 <img
                   :src="caseStudy.logoUrl"
@@ -259,7 +255,7 @@ const statusLabel: Record<Project['status'], string> = {
               </ul>
 
               <p class="mt-5 pt-4 border-t border-karma-border text-xs text-karma-text-muted leading-relaxed">
-                Caso construido con datos ficticios. No publica credenciales ni información de clientes.
+                Caso construido con datos ficticios y análisis de investigación.
               </p>
             </div>
           </div>
