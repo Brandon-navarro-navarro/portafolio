@@ -37,6 +37,27 @@ const projects: Project[] = [
 
 const caseStudies = [
   {
+    eyebrow: 'SISTEMA SATÉLITE / PUNTO DE VENTA',
+    title: 'Pulso · Punto de venta',
+    description:
+      'Sistema satélite de punto de venta que opera de forma independiente y puede integrarse con ERPs. Mostrador, pedidos y caja con perfiles de ropa, farmacia y tecnología.',
+    modules: [
+      'Mostrador y ticket',
+      'Perfiles por rubro',
+      'Pedidos por cobrar',
+      'Caja y medios de pago',
+      'Catálogo y clientes',
+      'Reportes del turno',
+    ],
+    stack: ['Angular 20', 'TypeScript', 'Señales', 'Tailwind CSS 4'],
+    caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/punto-de-venta/`,
+    demoUrl: `${import.meta.env.BASE_URL}demos/pulso/index.html#/acceso`,
+    logoUrl: `${import.meta.env.BASE_URL}pulso-logo.svg`,
+    logoAlt: 'Pulso, sistema de punto de venta independiente',
+    accent: '#6835df',
+    accentSoft: '#b9a2fb',
+  },
+  {
     eyebrow: 'VERTICAL ERP / RESTAURANTE',
     title: 'Mesa · Gestión de restaurante',
     description:
@@ -242,7 +263,13 @@ const statusLabel: Record<Project['status'], string> = {
             </div>
 
             <div class="border border-white/10 bg-karma-void/70 p-5 md:p-6">
-              <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-4">MÓDULOS PRINCIPALES</p>
+              <p class="font-mono text-xs text-karma-purple-400 tracking-widest mb-4">
+                {{
+                  caseStudy.eyebrow.startsWith('SISTEMA SATÉLITE')
+                    ? 'CAPACIDADES PRINCIPALES'
+                    : 'MÓDULOS PRINCIPALES'
+                }}
+              </p>
               <ul class="grid sm:grid-cols-2 gap-3">
                 <li
                   v-for="module in caseStudy.modules"

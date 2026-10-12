@@ -155,3 +155,22 @@ Vite automáticamente (build: `npm run build`, output: `dist`).
   `public/demos/hotel/` y `public/demos/taller/`, con rutas hash y datos
   ficticios. La documentación y el código fuente siguen enlazando a los
   repositorios públicos de cada producto.
+
+## Caso de producto y demo de Pulso
+
+- Pulso es un sistema satélite de punto de venta independiente, integrable con ERPs. No se
+  clasifica como vertical; ropa, farmacia y tecnología son perfiles del sistema.
+- Su ficha vive en `/proyectos/punto-de-venta/` y monta `VerticalCaseStudy.vue`
+  con la variante `pos`, manteniendo el estilo de los otros casos.
+- Se muestra solamente la explicación y la demo, sin enlaces al repositorio
+  ni a la portada original. El build estático vive en `public/demos/pulso/`.
+- Fuente: `Kreyshin/KM.WEB.POS`, commit `7f259bb52fd4d7678e2ff858965dc6d92a9bde8d`.
+  Para integrar la demo se habilitó `withHashLocation()` y se compiló con
+  `npm run build:demo -- --base-href /portafolio/demos/pulso/`.
+  El título y la identificación del acceso usan Pulso como sistema independiente. No se distribuyen fuentes ni mapas de fuente.
+- Acceso de demo: Rosa Quispe, PIN 1111; Demo Admin, PIN 4444.
+  Caja y servicios son simulados; las integraciones reales con ERPs siguen pendientes.
+
+- Pulso utiliza el logo violeta de impresora con recibo proporcionado por el usuario,
+  publicado como `pulso-logo.svg` (y PNG para metadatos sociales). La tarjeta,
+  la ficha y la demo comparten violeta #6835df, acento #7c4df0, lila #b9a2fb, acero #eceef4 e índigo #141d45.

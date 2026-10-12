@@ -1,11 +1,106 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-type Variant = 'hotel' | 'taller'
+type Variant = 'hotel' | 'taller' | 'pos'
 
 const props = defineProps<{ variant: Variant }>()
 
 const studies = {
+  pos: {
+    name: 'Pulso',
+    descriptor: 'Punto de venta',
+    eyebrow: 'SISTEMA SATÉLITE / PUNTO DE VENTA',
+    headline: 'Cada venta, al ritmo de tu negocio.',
+    intro:
+      'Un sistema de punto de venta independiente para gestionar mostrador, pedidos por cobrar y caja. Se adapta al rubro de cada sucursal y está diseñado para integrarse con ERPs.',
+    primary: '#6835df',
+    accent: '#7c4df0',
+    accentLight: '#b9a2fb',
+    dark: '#08090d',
+    surface: '#1c2759',
+    pale: '#eceef4',
+    ink: '#141d45',
+    logo: `${import.meta.env.BASE_URL}pulso-logo.svg`,
+    logoAlt: 'Pulso, sistema de punto de venta independiente',
+    demo: `${import.meta.env.BASE_URL}demos/pulso/index.html#/acceso`,
+    docs: '',
+    repo: '',
+    metrics: [
+      ['3', 'perfiles de rubro'],
+      ['4', 'roles de acceso'],
+      ['S/', 'moneda local'],
+      ['IGV', 'totales del ticket'],
+    ],
+    workColumns: [
+      {
+        title: 'Ropa',
+        note: 'Elegir la variante correcta',
+        items: ['Talla y color', 'Matriz de variantes', 'Ticket compartido'],
+      },
+      {
+        title: 'Farmacia',
+        note: 'Reglas propias del rubro',
+        items: ['Marcas de producto', 'Atributos de botica', 'Validación por perfil'],
+      },
+      {
+        title: 'Tecnología',
+        note: 'Identificar cada ejemplar',
+        items: ['Número de serie', 'IMEI por unidad', 'Trazabilidad del artículo'],
+      },
+    ],
+    capabilities: [
+      [
+        '01',
+        'Mostrador y ticket',
+        'Selección de productos, cantidades y totales con IGV en un ticket común a todos los rubros.',
+      ],
+      [
+        '02',
+        'Perfiles por rubro',
+        'Ropa, farmacia y tecnología aportan sus propias reglas sin cambiar el flujo central de venta.',
+      ],
+      [
+        '03',
+        'Pedidos por cobrar',
+        'El vendedor prepara el pedido y caja retoma el cobro con el detalle de la venta.',
+      ],
+      [
+        '04',
+        'Caja y cobro',
+        'Apertura del turno, medios de pago, movimientos, recibo y cierre con servicios simulados.',
+      ],
+      [
+        '05',
+        'Catálogo y clientes',
+        'Creación y edición de productos, movimientos de stock y carga masiva desde Excel, junto a la consulta de clientes.',
+      ],
+      [
+        '06',
+        'Sesión y reportes',
+        'Acceso por PIN o usuario, permisos por rol y resumen de ventas y medios de pago del turno.',
+      ],
+    ],
+    modelTitle: 'Un sistema independiente. Cada rubro conserva sus reglas.',
+    modelCopy:
+      'Pulso reúne su propia operación de venta en un sistema independiente. El núcleo administra el ticket; cada perfil aporta las reglas de su rubro. El vendedor prepara el pedido y el cajero completa el cobro. La integración con un ERP puede conectar los datos del negocio.',
+    flow: ['Acceso', 'Sucursal', 'Producto', 'Ticket', 'Cobro', 'Recibo'],
+    stack: [
+      ['Interfaz', 'Angular 20, TypeScript, señales y Tailwind CSS 4'],
+      ['Núcleo', 'Modelo del ticket y contratos en TypeScript independiente del framework'],
+      ['Perfiles', 'Librerías por rubro, cargadas bajo demanda'],
+      ['Integración', 'Puertos y adaptadores simulados; catálogo desde Excel'],
+    ],
+    complete: [
+      'Acceso por PIN y permisos por rol',
+      'Perfiles de ropa, farmacia y tecnología',
+      'Mostrador y ticket con IGV',
+      'Pedidos por cobrar',
+      'Caja, cobro y recibo simulados',
+      'Catálogo, clientes y reportes del turno',
+    ],
+    pending:
+      'La demo utiliza servicios simulados. La conexión con servicios reales y las integraciones con ERPs son etapas pendientes. La demo no emite comprobantes fiscales ni registra operaciones reales.',
+  },
   hotel: {
     name: 'Alba',
     descriptor: 'Gestión hotelera',
@@ -179,6 +274,7 @@ const portfolioUrl = import.meta.env.BASE_URL
         >
         <div class="flex items-center gap-3">
           <a
+            v-if="study.repo"
             :href="study.repo"
             target="_blank"
             rel="noopener"
@@ -212,7 +308,7 @@ const portfolioUrl = import.meta.env.BASE_URL
             <div>
               <span
                 class="inline-flex border border-[var(--accent)]/50 bg-[var(--accent)]/10 px-3 py-1 font-mono text-xs text-white"
-                >CASO DE ESTUDIO</span
+                >CASO DE PRODUCTO</span
               >
               <p class="mt-2 font-mono text-[10px] tracking-[0.18em] text-white/50">{{ study.eyebrow }}</p>
             </div>
@@ -239,7 +335,11 @@ const portfolioUrl = import.meta.env.BASE_URL
             >
           </div>
           <p class="mt-4 text-xs text-white/40">
-            Demo con datos ficticios · Acceso precargado · Persistencia local en el navegador
+            {{
+              variant === 'pos'
+                ? 'Demo con datos ficticios · Rosa Quispe: PIN 1111 · Admin: PIN 4444'
+                : 'Demo con datos ficticios · Acceso precargado · Persistencia local en el navegador'
+            }}
           </p>
         </div>
 
@@ -254,7 +354,8 @@ const portfolioUrl = import.meta.env.BASE_URL
               <span class="h-2.5 w-2.5 rounded-full bg-[var(--accent-light)]" />
               <span class="h-2.5 w-2.5 rounded-full bg-white/30" />
               <span class="ml-3 font-mono text-[10px] text-white/35"
-                >{{ study.name.toLowerCase() }} / jornada operativa</span
+                >{{ study.name.toLowerCase() }} /
+                {{ variant === 'pos' ? 'perfiles de rubro · vista ilustrativa' : 'jornada operativa' }}</span
               >
             </div>
             <div class="p-5 md:p-7">
@@ -346,12 +447,24 @@ const portfolioUrl = import.meta.env.BASE_URL
       <div class="section-container grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <p class="font-mono text-xs tracking-[0.2em] text-[var(--brand)]">03 · ARQUITECTURA</p>
-          <h2 class="mt-4 text-4xl font-bold md:text-5xl">Front primero, sin hipotecar el backend.</h2>
-          <p class="mt-6 leading-relaxed opacity-65">
+          <h2 class="mt-4 text-4xl font-bold md:text-5xl">
+            {{
+              variant === 'pos'
+                ? 'Independiente para operar. Preparado para integrar.'
+                : 'Front primero, sin hipotecar el backend.'
+            }}
+          </h2>
+          <p v-if="variant === 'pos'" class="mt-6 leading-relaxed opacity-65">
+            Pulso es un sistema satélite con operación propia. Sus perfiles de rubro, ticket y caja funcionan
+            dentro del punto de venta. Los contratos de integración permiten conectarlo con ERPs para
+            intercambiar información de catálogo, inventario o ventas. La demo utiliza adaptadores simulados.
+          </p>
+          <p v-else class="mt-6 leading-relaxed opacity-65">
             Las vistas nunca dependen directamente de los datos de ejemplo. Cada dominio atraviesa una capa de
             servicios, preparada para cambiar el motor local por APIs reales sin reconstruir la experiencia.
           </p>
           <a
+            v-if="study.docs"
             :href="study.docs"
             target="_blank"
             rel="noopener"
@@ -366,17 +479,17 @@ const portfolioUrl = import.meta.env.BASE_URL
           <div class="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
             <div class="border border-white/10 bg-white/5 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">VISTAS</p>
-              <p class="mt-2 font-semibold">Vue</p>
+              <p class="mt-2 font-semibold">{{ variant === 'pos' ? 'Angular + perfiles' : 'Vue' }}</p>
             </div>
             <span class="text-center text-[var(--accent)]">→</span>
             <div class="border border-white/10 bg-white/5 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">SERVICIOS</p>
-              <p class="mt-2 font-semibold">Contratos</p>
+              <p class="mt-2 font-semibold">{{ variant === 'pos' ? 'Ticket + puertos' : 'Contratos' }}</p>
             </div>
             <span class="text-center text-[var(--accent)]">→</span>
             <div class="border border-[var(--accent)]/30 bg-[var(--accent)]/10 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">DATOS</p>
-              <p class="mt-2 font-semibold">Mock / API</p>
+              <p class="mt-2 font-semibold">{{ variant === 'pos' ? 'Simulación / API' : 'Mock / API' }}</p>
             </div>
           </div>
           <dl class="mt-7 divide-y divide-white/10 border-t border-white/10">
@@ -435,6 +548,7 @@ const portfolioUrl = import.meta.env.BASE_URL
             >Abrir {{ study.name }} en demo →</a
           >
           <a
+            v-if="study.repo"
             :href="study.repo"
             target="_blank"
             rel="noopener"

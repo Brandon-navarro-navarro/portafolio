@@ -17,6 +17,7 @@ export default defineConfig({
         restaurant: path.resolve(import.meta.dirname, 'proyectos/restaurante/index.html'),
         hotel: path.resolve(import.meta.dirname, 'proyectos/hotel/index.html'),
         taller: path.resolve(import.meta.dirname, 'proyectos/taller/index.html'),
+        pos: path.resolve(import.meta.dirname, 'proyectos/punto-de-venta/index.html'),
       },
     },
   },
