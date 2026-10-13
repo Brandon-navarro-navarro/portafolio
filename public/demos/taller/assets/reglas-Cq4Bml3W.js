@@ -1,0 +1,1 @@
+function e(e,t,n=t){return{mensaje:t,campos:{[e]:n}}}var t=e=>e.normalize(`NFD`).replace(/[̀-ͯ]/g,``).trim().toLowerCase();function n(e,n,r,i){let a=t(r);return e.some(e=>e.id!==i&&t(n(e))===a)}export{n,e as t};

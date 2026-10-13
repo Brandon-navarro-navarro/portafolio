@@ -35,19 +35,48 @@ const projects: Project[] = [
   },
 ]
 
-const caseStudies = [
+interface CaseStudy {
+  eyebrow: string
+  title: string
+  description: string
+  modules: string[]
+  stack: string[]
+  caseStudyUrl: string
+  demoUrl?: string
+  logoUrl: string
+  logoAlt: string
+  accent: string
+  accentSoft: string
+  comingSoon?: boolean
+}
+
+const caseStudies: CaseStudy[] = [
+  {
+    eyebrow: 'PLATAFORMA ERP / GESTIÓN EMPRESARIAL',
+    title: 'Plataforma ERP',
+    description:
+      'Un sistema integrado para conectar inventarios, ventas, producción y seguridad. Próximamente: un caso de producto organizado por módulos y sus procesos compartidos.',
+    modules: ['Inventarios', 'Ventas', 'Producción', 'Seguridad'],
+    stack: ['Gestión integrada', 'Organización por módulos'],
+    caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/erp/`,
+    logoUrl: `${import.meta.env.BASE_URL}favicon.svg`,
+    logoAlt: 'Símbolo de la plataforma ERP',
+    accent: '#7c55df',
+    accentSoft: '#c0acef',
+    comingSoon: true,
+  },
   {
     eyebrow: 'SISTEMA SATÉLITE / PUNTO DE VENTA',
     title: 'Pulso · Punto de venta',
     description:
-      'Sistema satélite de punto de venta que opera de forma independiente y puede integrarse con ERPs. Mostrador, pedidos y caja con perfiles de ropa, farmacia y tecnología.',
+      'Sistema satélite de punto de venta independiente e integrable con ERPs. Mostrador, pedidos, caja y devoluciones con perfiles de ropa, farmacia y tecnología.',
     modules: [
       'Mostrador y ticket',
       'Perfiles por rubro',
       'Pedidos por cobrar',
       'Caja y medios de pago',
       'Catálogo y clientes',
-      'Reportes del turno',
+      'Devoluciones y notas de crédito',
     ],
     stack: ['Angular 20', 'TypeScript', 'Señales', 'Tailwind CSS 4'],
     caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/punto-de-venta/`,
@@ -61,14 +90,14 @@ const caseStudies = [
     eyebrow: 'VERTICAL ERP / RESTAURANTE',
     title: 'Mesa · Gestión de restaurante',
     description:
-      'Back office para configurar y supervisar la operación gastronómica: espacios, carta, inventario, recetas y parámetros por establecimiento.',
+      'Back office gastronómico con salones, carta, abastecimiento, recetas, ventas, caja, comprobantes simulados y reportes de rentabilidad.',
     modules: [
       'Salones y mesas',
       'Carta y combos',
       'Inventario e insumos',
       'Recetas y costos',
-      'Almacenes',
-      'Configuración operativa',
+      'Ventas y caja',
+      'Comprobantes y reportes',
     ],
     stack: ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS'],
     caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/restaurante/`,
@@ -82,14 +111,14 @@ const caseStudies = [
     eyebrow: 'VERTICAL ERP / HOTELERÍA',
     title: 'Alba · Gestión hotelera',
     description:
-      'Operación hotelera de punta a punta: habitaciones, reservas, recepción, housekeeping, mantenimiento y tarifas por temporada.',
+      'Operación hotelera con habitaciones, reservas, recepción, housekeeping, tarifas, canales de venta y cierre de día sobre datos de ejemplo.',
     modules: [
       'Habitaciones y pisos',
       'Reservas y recepción',
       'Huéspedes',
       'Housekeeping',
       'Mantenimiento',
-      'Tarifas y temporadas',
+      'Tarifas, canales y cierre de día',
     ],
     stack: ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS'],
     caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/hotel/`,
@@ -103,7 +132,7 @@ const caseStudies = [
     eyebrow: 'VERTICAL ERP / TALLER AUTOMOTRIZ',
     title: 'Torque · Gestión de taller',
     description:
-      'Control operativo del taller mecánico: órdenes, bahías, presupuestos, repuestos, baremos, citas y entrega del vehículo.',
+      'Control del taller desde la matrícula y recepción hasta la entrega: órdenes, bahías, presupuestos, repuestos, planes de mantenimiento y citas.',
     modules: [
       'Órdenes de trabajo',
       'Bahías y carga',
@@ -211,7 +240,7 @@ const statusLabel: Record<Project['status'], string> = {
                     class="border-l pl-3 text-[10px] font-mono tracking-wider"
                     :style="{ borderColor: caseStudy.accent, color: caseStudy.accentSoft }"
                   >
-                    CASO DE PRODUCTO
+                    {{ caseStudy.comingSoon ? 'CASO DE PRODUCTO · PRÓXIMAMENTE' : 'CASO DE PRODUCTO' }}
                   </span>
                 </div>
                 <img
@@ -249,9 +278,11 @@ const statusLabel: Record<Project['status'], string> = {
                   class="inline-flex items-center gap-2 border px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110"
                   :style="{ borderColor: caseStudy.accent, backgroundColor: caseStudy.accent }"
                 >
-                  Ver caso de estudio <span aria-hidden="true">→</span>
+                  {{ caseStudy.comingSoon ? 'Conocer la plataforma' : 'Ver caso de estudio' }}
+                  <span aria-hidden="true">→</span>
                 </a>
                 <a
+                  v-if="caseStudy.demoUrl"
                   :href="caseStudy.demoUrl"
                   target="_blank"
                   rel="noopener"
@@ -282,7 +313,11 @@ const statusLabel: Record<Project['status'], string> = {
               </ul>
 
               <p class="mt-5 pt-4 border-t border-karma-border text-xs text-karma-text-muted leading-relaxed">
-                Caso construido con datos ficticios y análisis de investigación.
+                {{
+                  caseStudy.comingSoon
+                    ? 'Alcance previsto. El caso detallado y la demo se presentarán próximamente.'
+                    : 'Caso construido con datos ficticios y análisis de investigación.'
+                }}
               </p>
             </div>
           </div>

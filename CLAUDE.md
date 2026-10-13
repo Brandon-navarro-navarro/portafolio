@@ -164,7 +164,7 @@ Vite automáticamente (build: `npm run build`, output: `dist`).
   con la variante `pos`, manteniendo el estilo de los otros casos.
 - Se muestra solamente la explicación y la demo, sin enlaces al repositorio
   ni a la portada original. El build estático vive en `public/demos/pulso/`.
-- Fuente: `Kreyshin/KM.WEB.POS`, commit `7f259bb52fd4d7678e2ff858965dc6d92a9bde8d`.
+- Fuente: `Kreyshin/KM.WEB.POS`, commit `20ef21f5e8a830e796ffe77a1856ca3a9767d957`.
   Para integrar la demo se habilitó `withHashLocation()` y se compiló con
   `npm run build:demo -- --base-href /portafolio/demos/pulso/`.
   El título y la identificación del acceso usan Pulso como sistema independiente. No se distribuyen fuentes ni mapas de fuente.
@@ -174,3 +174,39 @@ Vite automáticamente (build: `npm run build`, output: `dist`).
 - Pulso utiliza el logo violeta de impresora con recibo proporcionado por el usuario,
   publicado como `pulso-logo.svg` (y PNG para metadatos sociales). La tarjeta,
   la ficha y la demo comparten violeta #6835df, acento #7c4df0, lila #b9a2fb, acero #eceef4 e índigo #141d45.
+
+## Próximamente: plataforma ERP
+
+- Caso de producto en `/proyectos/erp/`, con entrada `erp-main.ts` y `ErpCaseStudy.vue`.
+- Presenta una plataforma integrada agrupada en Inventarios, Ventas, Producción y Seguridad.
+- Todas las capacidades están identificadas como alcance previsto. No tiene demo ni fecha de lanzamiento.
+- Su tarjeta en Proyectos usa el estado Próximamente y enlaza a la presentación propia.
+
+## Sincronización de demos — 13 de octubre de 2026
+
+Se recompilaron los HEAD remotos en copias temporales independientes; no se modificaron
+los repositorios de trabajo originales. Se conservaron los cambios locales del portafolio.
+
+| Demo   | Repositorio fuente            | Commit                                     |
+| ------ | ----------------------------- | ------------------------------------------ |
+| Mesa   | `Kreyshin/KM.WEB.RESTAURANT`  | `e12975bfd53f7397aaacc0c9e17077792d8e6924` |
+| Alba   | `Kreyshin/KM.WEB.HOTEL`       | `75c71e62521adaa8b25bf15b8b34de941e81e588` |
+| Torque | `Kreyshin/KM.WEB.TALLER.AUTO` | `8396b39437d4b383e33b2459bf2d09ca3f1fdbd6` |
+| Pulso  | `Kreyshin/KM.WEB.POS`         | `20ef21f5e8a830e796ffe77a1856ca3a9767d957` |
+
+- Vue: `npm run build:demo -- --base /portafolio/demos/<demo>/`.
+- Pulso: `withHashLocation()` y `npm run build:demo -- --base-href /portafolio/demos/pulso/`.
+  Se conservan el nombre Pulso, su logo violeta y el usuario Demo Admin en la distribución.
+- Mesa excluye la ruta y la entrada de navegación de la guía interna de componentes.
+- Mesa ya demuestra abastecimiento, recetas versionadas, personal, promociones,
+  ventas, cierre de caja, comprobantes con envío simulado y reportes exportables.
+  Su README original tiene estados antiguos; el alcance se contrastó con rutas,
+  vistas y el roadmap técnico. Backend, OSE, KDS en tiempo real y la pantalla
+  general de usuarios siguen pendientes.
+- Alba demuestra canales/comisiones, cierre de día y configuración de comprobantes;
+  reportes, facturación y bitácora siguen en construcción.
+- Torque demuestra matrícula y planes de mantenimiento; reportes, facturación,
+  bitácora y motivos siguen en construcción.
+- Pulso demuestra devoluciones, notas de crédito reutilizables y arqueo por medio
+  de pago; la integración ERP y el backend real siguen pendientes.
+- Solo se copian builds estáticos, sin fuentes ni mapas de fuente.

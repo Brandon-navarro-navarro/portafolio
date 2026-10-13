@@ -12,27 +12,32 @@ const capabilities = [
   {
     number: '02',
     title: 'Carta y combos',
-    description: 'Administración del menú, categorías, productos, disponibilidad y ofertas combinadas.',
+    description:
+      'Menú, combos y listas de precios por local, canal y temporada, con descuentos y reparto del precio del combo.',
   },
   {
     number: '03',
     title: 'Insumos y kardex',
-    description: 'Control de existencias, almacenes y movimientos para mantener trazabilidad operativa.',
+    description:
+      'Solicitudes, requerimientos, recepción, transformación, lotes, zonas y movimientos con trazabilidad por almacén.',
   },
   {
     number: '04',
     title: 'Recetas y costos',
-    description: 'Relación entre platos e insumos para estimar consumo y costo de preparación.',
+    description:
+      'Recetas por presentación, versiones y rendimiento; costos netos y objetivos de food cost por categoría.',
   },
   {
     number: '05',
-    title: 'Configuración operativa',
-    description: 'Canales de atención, áreas de preparación, impresoras y motivos de operación.',
+    title: 'Ventas, caja y comprobantes',
+    description:
+      'Cuentas por mesa, división, pago mixto, cierre ciego y comprobantes con envío simulado, sin validez fiscal.',
   },
   {
     number: '06',
-    title: 'Gobierno del sistema',
-    description: 'Base para usuarios, roles, permisos y reglas específicas por establecimiento.',
+    title: 'Personal, clientes y reportes',
+    description:
+      'Personal, accesos, clientes y promociones; ventas, rentabilidad y consumo con exportación a CSV y Excel.',
   },
 ]
 
@@ -42,7 +47,12 @@ const systems = [
     stateClass: 'border-[#f47526]/35 bg-[#f47526]/10 text-[#b7471d]',
     title: 'Mesa · Back Office',
     description: 'Centro de administración para configurar y supervisar la operación del restaurante.',
-    items: ['Salones y mesas', 'Carta y combos', 'Inventario', 'Recetas y configuración'],
+    items: [
+      'Salones, carta y precios',
+      'Abastecimiento y recetas',
+      'Ventas y caja',
+      'Comprobantes simulados y reportes',
+    ],
   },
   {
     state: 'Integración definida',
@@ -57,7 +67,7 @@ const systems = [
     stateClass: 'border-[#e06a2c]/35 bg-[#ffb45f]/15 text-[#a53518]',
     title: 'Sistemas operativos',
     description: 'Experiencias independientes para cada momento del servicio, conectadas al mismo dominio.',
-    items: ['Punto de venta', 'Comandas de cocina', 'Menú QR', 'Caja y cierre'],
+    items: ['KDS en tiempo real', 'Menú QR', 'Servicios reales', 'Envío a un OSE'],
   },
 ]
 
@@ -73,8 +83,12 @@ const roadmap = [
   { label: 'Base visual y navegación', state: 'Completado', complete: true },
   { label: 'Configuración operativa', state: 'Completado', complete: true },
   { label: 'Salones, carta y combos', state: 'Completado', complete: true },
-  { label: 'Abastecimiento e inventario', state: 'En progreso', complete: false },
-  { label: 'Ventas, caja y comprobantes', state: 'Siguiente etapa', complete: false },
+  { label: 'Abastecimiento, recetas y costos', state: 'Disponible en demo', complete: true },
+  { label: 'Personal, clientes y promociones', state: 'Disponible en demo', complete: true },
+  { label: 'Ventas y cierre de caja', state: 'Disponible en demo', complete: true },
+  { label: 'Comprobantes y notas de crédito', state: 'Envío simulado', complete: true },
+  { label: 'Reportes y exportación', state: 'Disponible en demo', complete: true },
+  { label: 'Backend, OSE y KDS en tiempo real', state: 'Pendiente', complete: false },
 ]
 </script>
 
@@ -125,8 +139,8 @@ const roadmap = [
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-relaxed text-karma-text-secondary">
             Mesa es una vertical de gestión para restaurantes diseñada sobre un núcleo ERP. Centraliza la
-            configuración del negocio, el menú, los espacios y el abastecimiento sin mezclar responsabilidades
-            entre sistemas.
+            configuración, el menú, los espacios, el abastecimiento y la venta. La demo permite recorrer caja,
+            comprobantes simulados y reportes sin registrar operaciones reales.
           </p>
           <div class="mt-9 flex flex-wrap gap-4">
             <a
@@ -346,7 +360,9 @@ const roadmap = [
             <h2 class="mt-4 text-4xl font-bold md:text-5xl">Transparencia sobre el avance.</h2>
             <p class="mt-5 text-karma-text-secondary">
               El caso distingue las capacidades demostrables de las siguientes etapas. El objetivo no es
-              mostrar una maqueta estática, sino la dirección de un producto modular.
+              mostrar una maqueta estática, sino los flujos que ya pueden recorrerse con datos de ejemplo. El
+              envío fiscal real, el KDS en tiempo real y la administración general de usuarios siguen
+              pendientes.
             </p>
           </div>
           <div class="rounded-2xl border border-white/10 bg-karma-void p-6 md:p-8">
@@ -391,7 +407,8 @@ const roadmap = [
         </h2>
         <p class="mx-auto mt-5 max-w-2xl text-karma-text-secondary">
           La versión pública utiliza información ficticia y almacenamiento local. No expone el repositorio
-          fuente, credenciales, información de clientes ni reglas de negocio sensibles.
+          fuente ni información de clientes reales. El acceso viene precargado y acepta cualquier contraseña
+          en modo demo; los comprobantes no tienen validez fiscal.
         </p>
         <a
           :href="demoUrl"

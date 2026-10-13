@@ -12,7 +12,7 @@ const studies = {
     eyebrow: 'SISTEMA SATÉLITE / PUNTO DE VENTA',
     headline: 'Cada venta, al ritmo de tu negocio.',
     intro:
-      'Un sistema de punto de venta independiente para gestionar mostrador, pedidos por cobrar y caja. Se adapta al rubro de cada sucursal y está diseñado para integrarse con ERPs.',
+      'Un sistema de punto de venta independiente para gestionar mostrador, pedidos por cobrar, caja y devoluciones. Se adapta al rubro de cada sucursal y está diseñado para integrarse con ERPs.',
     primary: '#6835df',
     accent: '#7c4df0',
     accentLight: '#b9a2fb',
@@ -67,7 +67,7 @@ const studies = {
       [
         '04',
         'Caja y cobro',
-        'Apertura del turno, medios de pago, movimientos, recibo y cierre con servicios simulados.',
+        'Pago mixto, vuelto, apertura, movimientos y cierre ciego con arqueo por medio de pago, sobre servicios simulados.',
       ],
       [
         '05',
@@ -76,8 +76,8 @@ const studies = {
       ],
       [
         '06',
-        'Sesión y reportes',
-        'Acceso por PIN o usuario, permisos por rol y resumen de ventas y medios de pago del turno.',
+        'Devoluciones y notas de crédito',
+        'Búsqueda de ventas, devolución total o parcial y notas de crédito cuyo saldo puede utilizarse en una compra posterior, con reglas simuladas.',
       ],
     ],
     modelTitle: 'Un sistema independiente. Cada rubro conserva sus reglas.',
@@ -95,11 +95,12 @@ const studies = {
       'Perfiles de ropa, farmacia y tecnología',
       'Mostrador y ticket con IGV',
       'Pedidos por cobrar',
-      'Caja, cobro y recibo simulados',
+      'Caja con pago mixto y arqueo por medio de pago',
+      'Devoluciones, anulación y saldo de notas de crédito simulados',
       'Catálogo, clientes y reportes del turno',
     ],
     pending:
-      'La demo utiliza servicios simulados. La conexión con servicios reales y las integraciones con ERPs son etapas pendientes. La demo no emite comprobantes fiscales ni registra operaciones reales.',
+      'La demo utiliza servicios simulados y permite acceder por PIN o usuario y clave. La conexión con servicios reales, las integraciones con ERPs y la extracción de la librería de caja compartida son etapas pendientes. Los comprobantes y notas de crédito de la demo no tienen validez fiscal.',
   },
   hotel: {
     name: 'Alba',
@@ -149,7 +150,7 @@ const studies = {
       ['03', 'Housekeeping', 'Tareas de salida, repaso e inspección sin confundir limpieza con ocupación.'],
       ['04', 'Huéspedes', 'Historial, preferencias y datos de contacto en una vista operativa.'],
       ['05', 'Mantenimiento', 'Incidencias, prioridad y bloqueo de habitaciones fuera de servicio.'],
-      ['06', 'Tarifas y temporadas', 'Reglas de precio por tipo de habitación, fecha y temporada.'],
+      ['06', 'Tarifas y canales', 'Precios por habitación y temporada, canales de venta y sus comisiones.'],
     ],
     modelTitle: 'Dos estados que nunca deben confundirse.',
     modelCopy:
@@ -167,10 +168,12 @@ const studies = {
       'Reservas, recepción y huéspedes',
       'Housekeeping y mantenimiento',
       'Amenities, lencería y movimientos',
-      'Tarifas, temporadas, usuarios y roles',
+      'Tarifas, temporadas, canales y comisiones',
+      'Cierre de día, sedes y configuración de comprobantes',
+      'Acceso por usuario y permisos por rol',
     ],
     pending:
-      'Canales y OTA, reportes, facturación SUNAT y bitácora tienen ruta y permisos preparados; su vista continúa en evolución.',
+      'Reportes, facturación SUNAT, bitácora, configuración general y motivos mantienen vistas en construcción. Los canales y comisiones se gestionan en la demo; la conexión real con OTA y backend sigue pendiente. El acceso utiliza un usuario precargado y acepta cualquier contraseña en modo demo.',
   },
   taller: {
     name: 'Torque',
@@ -224,7 +227,11 @@ const studies = {
       ],
       ['04', 'Clientes y vehículos', 'Historial de atención, kilometraje y relación entre titular y unidad.'],
       ['05', 'Repuestos', 'Stock, mínimos, movimientos y piezas asociadas a cada orden.'],
-      ['06', 'Servicios y baremos', 'Catálogo y tiempos estándar para cotizar con consistencia.'],
+      [
+        '06',
+        'Servicios y planes',
+        'Catálogo, baremos de mano de obra y planes de mantenimiento para cotizar con consistencia.',
+      ],
     ],
     modelTitle: 'Avance y detención son dimensiones distintas.',
     modelCopy:
@@ -240,12 +247,13 @@ const studies = {
       'El taller hoy y tablero de bahías',
       'Órdenes, ficha y presupuesto',
       'Detenciones y carga de técnicos',
-      'Clientes, vehículos y citas',
+      'Matrícula, clientes, vehículos y citas',
       'Servicios, baremos y mantenimiento',
-      'Repuestos, sedes, usuarios y roles',
+      'Repuestos, movimientos, sedes y configuración de la vertical',
+      'Acceso por usuario y permisos por rol',
     ],
     pending:
-      'Reportes de producción, facturación SUNAT, bitácora y motivos tienen navegación y permisos listos; su vista continúa en evolución.',
+      'Reportes de producción, facturación SUNAT, bitácora y motivos mantienen vistas en construcción. La operación utiliza servicios simulados; la conexión con backend y la emisión fiscal real siguen pendientes. Para explorar la demo, ingresa con el usuario admin y la contraseña demo.',
   },
 } as const
 
