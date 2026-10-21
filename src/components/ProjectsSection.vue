@@ -53,7 +53,8 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   ...manufacturingCases.map((product) => ({
-    eyebrow: 'VERTICAL AUTÓNOMA / PRODUCCIÓN',
+    eyebrow:
+      product.slug === 'confeccion' ? 'VERTICAL ERP / CONFECCIÓN' : 'VERTICAL ERP / PRODUCCIÓN EDITORIAL',
     title: product.name,
     description: product.description,
     modules: product.features.map(([name]) => name),

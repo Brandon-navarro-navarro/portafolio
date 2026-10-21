@@ -22,7 +22,7 @@ const base = import.meta.env.BASE_URL
       <div>
         <img :src="`${base}${product.icon}`" :alt="`Símbolo de ${product.name}`" class="mb-8 h-24 w-24" />
         <p class="font-mono text-xs tracking-widest text-[var(--product-soft)]">
-          VERTICAL AUTÓNOMA · CASO DE PRODUCTO EN PREPARACIÓN
+          VERTICAL ERP · CASO DE PRODUCTO EN PREPARACIÓN
         </p>
         <p class="mt-5 text-xl text-karma-text-secondary">{{ product.name }}</p>
         <h1 class="mt-4 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
