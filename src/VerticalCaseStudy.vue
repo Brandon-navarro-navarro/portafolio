@@ -271,28 +271,71 @@ const study = computed(() => {
     headline: product.headline,
     intro: product.description,
     primary: product.accent,
-    accent: product.accent,
+    accent: product.slug === 'confeccion' ? '#42b6a9' : '#6d9bd0',
     accentLight: product.soft,
-    dark: product.slug === 'confeccion' ? '#091715' : '#0a1420',
-    surface: product.slug === 'confeccion' ? '#142d29' : '#172c40',
-    pale: product.slug === 'confeccion' ? '#eaf4f0' : '#edf2f7',
-    ink: product.slug === 'confeccion' ? '#15332d' : '#193047',
+    dark: '#080d16',
+    surface: '#111827',
+    pale: '#eef1f5',
+    ink: '#0f1724',
     logo: `${import.meta.env.BASE_URL}${product.icon}`,
     logoAlt: `Símbolo de ${product.name}`,
     demo: '',
     repo: '',
     docs: '',
-    metrics: [
-      ['01', 'Solicitud'],
-      ['02', 'Preparación'],
-      ['03', 'Producción'],
-      ['04', 'Entrega'],
-    ],
-    workColumns: [
-      { title: 'Preparar', note: 'Flujo propuesto', items: product.steps.slice(0, 2) },
-      { title: 'Producir', note: 'Flujo propuesto', items: product.steps.slice(2, 4) },
-      { title: 'Entregar', note: 'Flujo propuesto', items: product.steps.slice(4) },
-    ],
+    metrics:
+      product.slug === 'confeccion'
+        ? [
+            ['6', 'órdenes activas'],
+            ['300', 'prendas en corte'],
+            ['2', 'talleres externos'],
+            ['24', 'por revisar'],
+          ]
+        : [
+            ['8', 'solicitudes'],
+            ['3', 'por aprobar'],
+            ['5', 'en producción'],
+            ['2', 'entregas del día'],
+          ],
+    workColumns:
+      product.slug === 'confeccion'
+        ? [
+            {
+              title: 'Corte',
+              note: 'Modelo, talla y color',
+              items: ['OT-024 · Polos básicos', '300 prendas · S / M / L', 'Jersey · partida 018'],
+            },
+            {
+              title: 'Costura',
+              note: 'Trabajo en talleres',
+              items: ['OT-021 · Taller externo', '120 piezas enviadas', '80 recibidas · 40 pendientes'],
+            },
+            {
+              title: 'Acabado',
+              note: 'Revisión y entrega',
+              items: ['OT-019 · Control de calidad', '24 prendas por revisar', 'Entrega prevista · viernes'],
+            },
+          ]
+        : [
+            {
+              title: 'Solicitudes',
+              note: 'Especificaciones del encargo',
+              items: ['SOL-018 · 1 000 flyers', 'A5 · couché · doble cara', 'Archivo recibido para revisión'],
+            },
+            {
+              title: 'Aprobación',
+              note: 'Presupuesto y prueba',
+              items: [
+                'OT-012 · Cajas personalizadas',
+                'Troquel y arte en revisión',
+                'Pendiente de aprobación',
+              ],
+            },
+            {
+              title: 'Producción',
+              note: 'Impresión y acabados',
+              items: ['OT-009 · Sobres impresos', 'Impresión → plegado', 'Entrega parcial programada'],
+            },
+          ],
     modelTitle:
       product.slug === 'confeccion'
         ? 'Cada lote, de la tela a la entrega.'
@@ -379,7 +422,7 @@ const portfolioUrl = import.meta.env.BASE_URL
             <div>
               <span
                 class="inline-flex border border-[var(--accent)]/50 bg-[var(--accent)]/10 px-3 py-1 font-mono text-xs text-white"
-                >{{ isPlanned ? 'PROPUESTA EN PREPARACIÓN' : 'CASO DE PRODUCTO' }}</span
+                >CASO DE PRODUCTO</span
               >
               <p class="mt-2 font-mono text-[10px] tracking-[0.18em] text-white/50">{{ study.eyebrow }}</p>
             </div>
@@ -402,6 +445,7 @@ const portfolioUrl = import.meta.env.BASE_URL
             >
             <a
               href="#producto"
+              :class="isPlanned ? 'bg-[var(--brand)] text-white shadow-2xl hover:brightness-125' : ''"
               class="border border-white/15 px-6 py-3.5 font-semibold text-white/70 transition hover:border-white/35 hover:text-white"
               >Conocer el producto</a
             >
@@ -409,7 +453,7 @@ const portfolioUrl = import.meta.env.BASE_URL
           <p class="mt-4 text-xs text-white/40">
             {{
               isPlanned
-                ? 'Alcance previsto · Sin demo ni fecha de lanzamiento anunciada'
+                ? 'Vista ilustrativa con datos ficticios · Propuesta en preparación · Sin demo disponible'
                 : variant === 'pos'
                   ? 'Demo con datos ficticios · Rosa Quispe: PIN 1111 · Admin: PIN 4444'
                   : 'Demo con datos ficticios · Acceso precargado · Persistencia local en el navegador'
@@ -421,7 +465,7 @@ const portfolioUrl = import.meta.env.BASE_URL
           <div class="absolute -inset-5 blur-3xl" :style="{ background: `${study.accent}20` }" />
           <div
             class="relative overflow-hidden border border-white/15 bg-[var(--surface)] shadow-2xl"
-            :class="variant === 'hotel' ? 'rounded-[1.75rem]' : 'rounded-xl'"
+            :class="variant === 'hotel' || isPlanned ? 'rounded-[1.75rem]' : 'rounded-xl'"
           >
             <div class="flex items-center gap-2 border-b border-white/10 px-5 py-4">
               <span class="h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
@@ -444,7 +488,7 @@ const portfolioUrl = import.meta.env.BASE_URL
                   v-for="metric in study.metrics"
                   :key="metric[1]"
                   class="border border-white/10 bg-white/[0.035] p-4"
-                  :class="variant === 'hotel' ? 'rounded-2xl' : 'rounded-md'"
+                  :class="variant === 'hotel' || isPlanned ? 'rounded-2xl' : 'rounded-md'"
                 >
                   <p class="text-2xl font-bold">{{ metric[0] }}</p>
                   <p class="mt-1 text-[10px] uppercase tracking-wider text-white/45">{{ metric[1] }}</p>
@@ -455,7 +499,7 @@ const portfolioUrl = import.meta.env.BASE_URL
                   v-for="column in study.workColumns"
                   :key="column.title"
                   class="border border-white/10 bg-black/10 p-4"
-                  :class="variant === 'hotel' ? 'rounded-2xl' : 'rounded-md'"
+                  :class="variant === 'hotel' || isPlanned ? 'rounded-2xl' : 'rounded-md'"
                 >
                   <p class="text-sm font-semibold">{{ column.title }}</p>
                   <p class="mt-1 text-[9px] text-white/35">{{ column.note }}</p>
@@ -467,7 +511,7 @@ const portfolioUrl = import.meta.env.BASE_URL
                     >
                       <span
                         class="h-1.5 w-1.5 shrink-0 bg-[var(--accent)]"
-                        :class="variant === 'hotel' ? 'rounded-full' : ''"
+                        :class="variant === 'hotel' || isPlanned ? 'rounded-full' : ''"
                       />{{ item }}
                     </li>
                   </ul>
@@ -490,7 +534,7 @@ const portfolioUrl = import.meta.env.BASE_URL
           <template v-for="(step, index) in study.flow" :key="step">
             <div
               class="flex-1 border border-black/10 bg-white px-4 py-5 text-center text-sm font-semibold shadow-sm"
-              :class="variant === 'hotel' ? 'rounded-2xl' : 'rounded-md'"
+              :class="variant === 'hotel' || isPlanned ? 'rounded-2xl' : 'rounded-md'"
             >
               {{ step }}
             </div>
@@ -508,7 +552,7 @@ const portfolioUrl = import.meta.env.BASE_URL
         </h2>
         <div
           class="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3"
-          :class="variant === 'hotel' ? 'rounded-[1.75rem]' : 'rounded-xl'"
+          :class="variant === 'hotel' || isPlanned ? 'rounded-[1.75rem]' : 'rounded-xl'"
         >
           <article
             v-for="capability in study.capabilities"
@@ -557,7 +601,7 @@ const portfolioUrl = import.meta.env.BASE_URL
         </div>
         <div
           class="bg-[var(--surface)] p-6 text-white shadow-xl md:p-8"
-          :class="variant === 'hotel' ? 'rounded-[1.75rem]' : 'rounded-xl'"
+          :class="variant === 'hotel' || isPlanned ? 'rounded-[1.75rem]' : 'rounded-xl'"
         >
           <div class="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
             <div class="border border-white/10 bg-white/5 p-5 text-center">
@@ -611,7 +655,7 @@ const portfolioUrl = import.meta.env.BASE_URL
         </div>
         <div
           class="border border-white/10 bg-[var(--surface)] p-6 md:p-8"
-          :class="variant === 'hotel' ? 'rounded-[1.75rem]' : 'rounded-xl'"
+          :class="variant === 'hotel' || isPlanned ? 'rounded-[1.75rem]' : 'rounded-xl'"
         >
           <div v-if="plannedProduct" class="space-y-5">
             <h3 class="text-xl font-semibold">Inventario básico para la operación diaria</h3>
