@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import ManufacturingCaseStudy from './ManufacturingCaseStudy.vue'
+import VerticalCaseStudy from './VerticalCaseStudy.vue'
 import './style.css'
 
-createApp(ManufacturingCaseStudy, { kind: 'confeccion' }).mount('#app')
+createApp(VerticalCaseStudy, { variant: 'confeccion' }).mount('#app')

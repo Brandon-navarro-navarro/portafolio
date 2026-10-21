@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { manufacturingCases } from './manufacturing-cases'
 
-type Variant = 'hotel' | 'taller' | 'pos'
+type Variant = 'hotel' | 'taller' | 'pos' | 'confeccion' | 'produccion-editorial'
 
 const props = defineProps<{ variant: Variant }>()
 
@@ -257,7 +258,62 @@ const studies = {
   },
 } as const
 
-const study = computed(() => studies[props.variant])
+const plannedProduct = computed(() => manufacturingCases.find((item) => item.slug === props.variant))
+const isPlanned = computed(() => Boolean(plannedProduct.value))
+const study = computed(() => {
+  const product = plannedProduct.value
+  if (!product) return studies[props.variant as keyof typeof studies]
+  return {
+    name: product.name,
+    descriptor: 'Producción especializada',
+    eyebrow:
+      product.slug === 'confeccion' ? 'VERTICAL ERP / CONFECCIÓN' : 'VERTICAL ERP / PRODUCCIÓN EDITORIAL',
+    headline: product.headline,
+    intro: product.description,
+    primary: product.accent,
+    accent: product.accent,
+    accentLight: product.soft,
+    dark: product.slug === 'confeccion' ? '#091715' : '#0a1420',
+    surface: product.slug === 'confeccion' ? '#142d29' : '#172c40',
+    pale: product.slug === 'confeccion' ? '#eaf4f0' : '#edf2f7',
+    ink: product.slug === 'confeccion' ? '#15332d' : '#193047',
+    logo: `${import.meta.env.BASE_URL}${product.icon}`,
+    logoAlt: `Símbolo de ${product.name}`,
+    demo: '',
+    repo: '',
+    docs: '',
+    metrics: [
+      ['01', 'Solicitud'],
+      ['02', 'Preparación'],
+      ['03', 'Producción'],
+      ['04', 'Entrega'],
+    ],
+    workColumns: [
+      { title: 'Preparar', note: 'Flujo propuesto', items: product.steps.slice(0, 2) },
+      { title: 'Producir', note: 'Flujo propuesto', items: product.steps.slice(2, 4) },
+      { title: 'Entregar', note: 'Flujo propuesto', items: product.steps.slice(4) },
+    ],
+    modelTitle:
+      product.slug === 'confeccion'
+        ? 'Cada lote, de la tela a la entrega.'
+        : 'Cada encargo, de la solicitud al acabado.',
+    modelCopy:
+      'Un recorrido previsto que conecta las especificaciones del trabajo, sus materiales y las etapas de producción. La propuesta conserva las reglas propias del rubro.',
+    flow: product.steps,
+    capabilities: product.features.map(([title, copy], index) => [
+      String(index + 1).padStart(2, '0'),
+      title,
+      copy,
+    ]),
+    stack: [
+      ['Operación propia', 'Funciones especializadas por rubro'],
+      ['Inventario básico', product.inventory],
+      ['Escalamiento ERP', 'Planificación, capacidad y costos avanzados; integración prevista'],
+    ],
+    complete: [],
+    pending: product.limits,
+  }
+})
 const portfolioUrl = import.meta.env.BASE_URL
 </script>
 
@@ -282,6 +338,12 @@ const portfolioUrl = import.meta.env.BASE_URL
         >
         <div class="flex items-center gap-3">
           <a
+            v-if="isPlanned"
+            href="#producto"
+            class="border border-[var(--accent)]/60 px-4 py-2 text-xs font-semibold text-white"
+            >Explorar propuesta ↓</a
+          >
+          <a
             v-if="study.repo"
             :href="study.repo"
             target="_blank"
@@ -290,6 +352,7 @@ const portfolioUrl = import.meta.env.BASE_URL
             >Código ↗</a
           >
           <a
+            v-if="study.demo"
             :href="study.demo"
             target="_blank"
             rel="noopener"
@@ -316,7 +379,7 @@ const portfolioUrl = import.meta.env.BASE_URL
             <div>
               <span
                 class="inline-flex border border-[var(--accent)]/50 bg-[var(--accent)]/10 px-3 py-1 font-mono text-xs text-white"
-                >CASO DE PRODUCTO</span
+                >{{ isPlanned ? 'PROPUESTA EN PREPARACIÓN' : 'CASO DE PRODUCTO' }}</span
               >
               <p class="mt-2 font-mono text-[10px] tracking-[0.18em] text-white/50">{{ study.eyebrow }}</p>
             </div>
@@ -330,6 +393,7 @@ const portfolioUrl = import.meta.env.BASE_URL
           <p class="mt-7 max-w-2xl text-lg leading-relaxed text-white/65">{{ study.intro }}</p>
           <div class="mt-9 flex flex-wrap gap-4">
             <a
+              v-if="study.demo"
               :href="study.demo"
               target="_blank"
               rel="noopener"
@@ -344,9 +408,11 @@ const portfolioUrl = import.meta.env.BASE_URL
           </div>
           <p class="mt-4 text-xs text-white/40">
             {{
-              variant === 'pos'
-                ? 'Demo con datos ficticios · Rosa Quispe: PIN 1111 · Admin: PIN 4444'
-                : 'Demo con datos ficticios · Acceso precargado · Persistencia local en el navegador'
+              isPlanned
+                ? 'Alcance previsto · Sin demo ni fecha de lanzamiento anunciada'
+                : variant === 'pos'
+                  ? 'Demo con datos ficticios · Rosa Quispe: PIN 1111 · Admin: PIN 4444'
+                  : 'Demo con datos ficticios · Acceso precargado · Persistencia local en el navegador'
             }}
           </p>
         </div>
@@ -363,7 +429,13 @@ const portfolioUrl = import.meta.env.BASE_URL
               <span class="h-2.5 w-2.5 rounded-full bg-white/30" />
               <span class="ml-3 font-mono text-[10px] text-white/35"
                 >{{ study.name.toLowerCase() }} /
-                {{ variant === 'pos' ? 'perfiles de rubro · vista ilustrativa' : 'jornada operativa' }}</span
+                {{
+                  isPlanned
+                    ? 'flujo propuesto · vista ilustrativa'
+                    : variant === 'pos'
+                      ? 'perfiles de rubro · vista ilustrativa'
+                      : 'jornada operativa'
+                }}</span
               >
             </div>
             <div class="p-5 md:p-7">
@@ -457,12 +529,15 @@ const portfolioUrl = import.meta.env.BASE_URL
           <p class="font-mono text-xs tracking-[0.2em] text-[var(--brand)]">03 · ARQUITECTURA</p>
           <h2 class="mt-4 text-4xl font-bold md:text-5xl">
             {{
-              variant === 'pos'
-                ? 'Independiente para operar. Preparado para integrar.'
-                : 'Front primero, sin hipotecar el backend.'
+              isPlanned
+                ? 'Operación propia. Escalamiento con el ERP.'
+                : variant === 'pos'
+                  ? 'Independiente para operar. Preparado para integrar.'
+                  : 'Front primero, sin hipotecar el backend.'
             }}
           </h2>
-          <p v-if="variant === 'pos'" class="mt-6 leading-relaxed opacity-65">
+          <p v-if="plannedProduct" class="mt-6 leading-relaxed opacity-65">{{ plannedProduct.upgrade }}</p>
+          <p v-else-if="variant === 'pos'" class="mt-6 leading-relaxed opacity-65">
             Pulso es un sistema satélite con operación propia. Sus perfiles de rubro, ticket y caja funcionan
             dentro del punto de venta. Los contratos de integración permiten conectarlo con ERPs para
             intercambiar información de catálogo, inventario o ventas. La demo utiliza adaptadores simulados.
@@ -487,17 +562,23 @@ const portfolioUrl = import.meta.env.BASE_URL
           <div class="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
             <div class="border border-white/10 bg-white/5 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">VISTAS</p>
-              <p class="mt-2 font-semibold">{{ variant === 'pos' ? 'Angular + perfiles' : 'Vue' }}</p>
+              <p class="mt-2 font-semibold">
+                {{ isPlanned ? 'Vertical especializada' : variant === 'pos' ? 'Angular + perfiles' : 'Vue' }}
+              </p>
             </div>
             <span class="text-center text-[var(--accent)]">→</span>
             <div class="border border-white/10 bg-white/5 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">SERVICIOS</p>
-              <p class="mt-2 font-semibold">{{ variant === 'pos' ? 'Ticket + puertos' : 'Contratos' }}</p>
+              <p class="mt-2 font-semibold">
+                {{ isPlanned ? 'Inventario básico' : variant === 'pos' ? 'Ticket + puertos' : 'Contratos' }}
+              </p>
             </div>
             <span class="text-center text-[var(--accent)]">→</span>
             <div class="border border-[var(--accent)]/30 bg-[var(--accent)]/10 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">DATOS</p>
-              <p class="mt-2 font-semibold">{{ variant === 'pos' ? 'Simulación / API' : 'Mock / API' }}</p>
+              <p class="mt-2 font-semibold">
+                {{ isPlanned ? 'ERP al escalar' : variant === 'pos' ? 'Simulación / API' : 'Mock / API' }}
+              </p>
             </div>
           </div>
           <dl class="mt-7 divide-y divide-white/10 border-t border-white/10">
@@ -516,8 +597,14 @@ const portfolioUrl = import.meta.env.BASE_URL
           <p class="font-mono text-xs tracking-[0.2em] text-[var(--accent-light)]">
             04 · ESTADO DEL PRODUCTO
           </p>
-          <h2 class="mt-4 text-4xl font-bold md:text-5xl">Lo demostrable, sin inflar el alcance.</h2>
-          <p class="mt-5 text-white/55">
+          <h2 class="mt-4 text-4xl font-bold md:text-5xl">
+            {{ isPlanned ? 'El alcance, antes del desarrollo.' : 'Lo demostrable, sin inflar el alcance.' }}
+          </h2>
+          <p v-if="isPlanned" class="mt-5 text-white/55">
+            Las capacidades descritas son una propuesta de producto. La vista ilustrativa representa un flujo
+            previsto; no es una captura de un sistema disponible.
+          </p>
+          <p v-else class="mt-5 text-white/55">
             La demo refleja capacidades terminadas y utiliza información ficticia. Los módulos siguientes se
             presentan como evolución, no como funcionalidad disponible.
           </p>
@@ -526,7 +613,20 @@ const portfolioUrl = import.meta.env.BASE_URL
           class="border border-white/10 bg-[var(--surface)] p-6 md:p-8"
           :class="variant === 'hotel' ? 'rounded-[1.75rem]' : 'rounded-xl'"
         >
-          <ul class="grid gap-3 sm:grid-cols-2">
+          <div v-if="plannedProduct" class="space-y-5">
+            <h3 class="text-xl font-semibold">Inventario básico para la operación diaria</h3>
+            <p class="text-sm leading-relaxed text-white/65">{{ plannedProduct.inventory }}</p>
+            <p class="text-sm leading-relaxed text-white/55">
+              La propuesta permite operar sin contratar el ERP. Al integrar Inventarios del ERP, este
+              centralizará existencias y movimientos; la vertical conservará sus funciones especializadas.
+            </p>
+            <a
+              :href="`${portfolioUrl}proyectos/erp/`"
+              class="inline-flex text-[var(--accent-light)] hover:underline"
+              >Explorar la plataforma ERP →</a
+            >
+          </div>
+          <ul v-else class="grid gap-3 sm:grid-cols-2">
             <li
               v-for="item in study.complete"
               :key="item"
@@ -536,7 +636,9 @@ const portfolioUrl = import.meta.env.BASE_URL
             </li>
           </ul>
           <div class="mt-5 border-l-2 border-[var(--accent)] bg-black/10 p-4">
-            <p class="font-mono text-[10px] tracking-wider text-[var(--accent-light)]">EN EVOLUCIÓN</p>
+            <p class="font-mono text-[10px] tracking-wider text-[var(--accent-light)]">
+              {{ isPlanned ? 'LÍMITES DEL ALCANCE INICIAL' : 'EN EVOLUCIÓN' }}
+            </p>
             <p class="mt-2 text-sm leading-relaxed text-white/55">{{ study.pending }}</p>
           </div>
         </div>
@@ -549,6 +651,13 @@ const portfolioUrl = import.meta.env.BASE_URL
         <h2 class="mx-auto mt-5 max-w-3xl text-4xl font-bold md:text-5xl">{{ study.headline }}</h2>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <a
+            v-if="isPlanned"
+            :href="`${portfolioUrl}#projects`"
+            class="border border-white/15 px-7 py-4 font-semibold text-white/70 transition hover:border-white/35 hover:text-white"
+            >Explorar otras propuestas →</a
+          >
+          <a
+            v-if="study.demo"
             :href="study.demo"
             target="_blank"
             rel="noopener"

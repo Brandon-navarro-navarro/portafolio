@@ -301,7 +301,7 @@ const statusLabel: Record<Project['status'], string> = {
                   class="inline-flex items-center gap-2 border px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110"
                   :style="{ borderColor: caseStudy.accent, backgroundColor: caseStudy.accent }"
                 >
-                  {{ caseStudy.comingSoon ? 'Explorar la propuesta' : 'Ver caso de estudio' }}
+                  Explorar propuesta
                   <span aria-hidden="true">→</span>
                 </a>
                 <a
