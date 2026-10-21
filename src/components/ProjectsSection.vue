@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { crmStudy } from '../crm-study'
 import { manufacturingCases } from '../manufacturing-cases'
 // Proyectos públicos y un caso real de integración empresarial.
 interface Project {
@@ -52,6 +53,19 @@ interface CaseStudy {
 }
 
 const caseStudies: CaseStudy[] = [
+  {
+    eyebrow: crmStudy.eyebrow,
+    title: 'CRM · Gestión comercial configurable',
+    description: crmStudy.intro,
+    modules: crmStudy.capabilities.map((item) => item[1]),
+    stack: ['Propuesta de producto', 'Campos y embudos dinámicos', 'Integración ERP prevista'],
+    caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/crm/`,
+    logoUrl: crmStudy.logo,
+    logoAlt: crmStudy.logoAlt,
+    accent: crmStudy.primary,
+    accentSoft: crmStudy.accentLight,
+    comingSoon: true,
+  },
   ...manufacturingCases.map((product) => ({
     eyebrow:
       product.slug === 'confeccion' ? 'VERTICAL ERP / CONFECCIÓN' : 'VERTICAL ERP / PRODUCCIÓN EDITORIAL',

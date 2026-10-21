@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { crmStudy } from './crm-study'
 import { manufacturingCases } from './manufacturing-cases'
 
-type Variant = 'hotel' | 'taller' | 'pos' | 'confeccion' | 'produccion-editorial'
+type Variant = 'hotel' | 'taller' | 'pos' | 'confeccion' | 'produccion-editorial' | 'crm'
 
 const props = defineProps<{ variant: Variant }>()
 
@@ -259,9 +260,10 @@ const studies = {
 } as const
 
 const plannedProduct = computed(() => manufacturingCases.find((item) => item.slug === props.variant))
-const isPlanned = computed(() => Boolean(plannedProduct.value))
+const isPlanned = computed(() => Boolean(plannedProduct.value) || props.variant === 'crm')
 const study = computed(() => {
   const product = plannedProduct.value
+  if (props.variant === 'crm') return crmStudy
   if (!product) return studies[props.variant as keyof typeof studies]
   return {
     name: product.name,
@@ -581,6 +583,12 @@ const portfolioUrl = import.meta.env.BASE_URL
             }}
           </h2>
           <p v-if="plannedProduct" class="mt-6 leading-relaxed opacity-65">{{ plannedProduct.upgrade }}</p>
+          <p v-else-if="variant === 'crm'" class="mt-6 leading-relaxed opacity-65">
+            La propuesta separa el núcleo comercial de la configuración de campos, embudos y reglas. El CRM
+            podría funcionar de forma independiente y conectarse al ERP o a las verticales para compartir
+            información comercial autorizada. Los perfiles adaptan el seguimiento; las operaciones propias de
+            cada rubro permanecen en su sistema.
+          </p>
           <p v-else-if="variant === 'pos'" class="mt-6 leading-relaxed opacity-65">
             Pulso es un sistema satélite con operación propia. Sus perfiles de rubro, ticket y caja funcionan
             dentro del punto de venta. Los contratos de integración permiten conectarlo con ERPs para
@@ -607,14 +615,30 @@ const portfolioUrl = import.meta.env.BASE_URL
             <div class="border border-white/10 bg-white/5 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">VISTAS</p>
               <p class="mt-2 font-semibold">
-                {{ isPlanned ? 'Vertical especializada' : variant === 'pos' ? 'Angular + perfiles' : 'Vue' }}
+                {{
+                  isPlanned
+                    ? variant === 'crm'
+                      ? 'CRM configurable'
+                      : 'Vertical especializada'
+                    : variant === 'pos'
+                      ? 'Angular + perfiles'
+                      : 'Vue'
+                }}
               </p>
             </div>
             <span class="text-center text-[var(--accent)]">→</span>
             <div class="border border-white/10 bg-white/5 p-5 text-center">
               <p class="font-mono text-[10px] text-[var(--accent-light)]">SERVICIOS</p>
               <p class="mt-2 font-semibold">
-                {{ isPlanned ? 'Inventario básico' : variant === 'pos' ? 'Ticket + puertos' : 'Contratos' }}
+                {{
+                  isPlanned
+                    ? variant === 'crm'
+                      ? 'Reglas y perfiles'
+                      : 'Inventario básico'
+                    : variant === 'pos'
+                      ? 'Ticket + puertos'
+                      : 'Contratos'
+                }}
               </p>
             </div>
             <span class="text-center text-[var(--accent)]">→</span>
@@ -663,6 +687,23 @@ const portfolioUrl = import.meta.env.BASE_URL
             <p class="text-sm leading-relaxed text-white/55">
               La propuesta permite operar sin contratar el ERP. Al integrar Inventarios del ERP, este
               centralizará existencias y movimientos; la vertical conservará sus funciones especializadas.
+            </p>
+            <a
+              :href="`${portfolioUrl}proyectos/erp/`"
+              class="inline-flex text-[var(--accent-light)] hover:underline"
+              >Explorar la plataforma ERP →</a
+            >
+          </div>
+          <div v-else-if="variant === 'crm'" class="space-y-5">
+            <h3 class="text-xl font-semibold">Configurable para vender. Conectado para crecer.</h3>
+            <p class="text-sm leading-relaxed text-white/65">
+              Los perfiles preparan campos, embudos, formularios y reglas para distintos equipos. No
+              sustituyen los procesos operativos de una vertical.
+            </p>
+            <p class="text-sm leading-relaxed text-white/55">
+              Una oportunidad ganada podría originar una cotización o pedido en el ERP. El CRM conservaría el
+              seguimiento comercial y consultaría los datos autorizados del negocio, sin duplicar inventarios
+              ni contabilidad.
             </p>
             <a
               :href="`${portfolioUrl}proyectos/erp/`"
