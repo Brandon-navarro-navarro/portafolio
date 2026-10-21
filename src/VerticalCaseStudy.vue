@@ -116,7 +116,7 @@ const studies = {
     surface: '#111827',
     pale: '#eef1f5',
     ink: '#0f1724',
-    logo: `${import.meta.env.BASE_URL}alba-logo.png`,
+    logo: `${import.meta.env.BASE_URL}alba-logo.svg`,
     logoAlt: 'Alba, gestión hotelera',
     demo: `${import.meta.env.BASE_URL}demos/hotel/#/login`,
     docs: 'https://kreyshin.github.io/KM.WEB.HOTEL/',

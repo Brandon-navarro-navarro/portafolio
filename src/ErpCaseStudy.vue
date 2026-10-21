@@ -9,7 +9,8 @@ const modules = [
       'Productos y unidades de medida',
       'Almacenes y existencias',
       'Entradas, salidas y transferencias',
-      'Kardex y trazabilidad de movimientos',
+      'Kardex, lotes y trazabilidad entre sedes',
+      'Reservas, reposición y valorización avanzada',
     ],
     connection: 'Comparte disponibilidad con Ventas y materiales con Producción.',
   },
@@ -34,6 +35,9 @@ const modules = [
       'Órdenes de producción',
       'Consumo de insumos',
       'Registro de productos terminados',
+      'Planificación de necesidades (MRP) y listas multinivel',
+      'Capacidad por centro, máquina y turno',
+      'Costos indirectos y análisis de variaciones',
     ],
     connection: 'Relaciona las órdenes con el consumo y el ingreso de stock en Inventarios.',
   },
@@ -155,18 +159,25 @@ const modules = [
 
     <section class="section-container grid gap-8 py-20 md:py-24 lg:grid-cols-2">
       <div>
-        <p class="section-eyebrow">02 · PRÓXIMA PRESENTACIÓN</p>
-        <h2 class="mt-4 text-3xl font-semibold md:text-4xl">El caso de producto está en preparación.</h2>
+        <p class="section-eyebrow">02 · VERTICALES Y ESCALAMIENTO</p>
+        <h2 class="mt-4 text-3xl font-semibold md:text-4xl">
+          Una base compartida para operaciones especializadas.
+        </h2>
       </div>
       <div class="text-karma-text-secondary">
         <p class="leading-relaxed">
-          Esta página adelanta la organización y el alcance previsto de la plataforma. La presentación
-          completa incluirá los flujos de cada módulo y una demo para recorrerlos.
+          La propuesta contempla conectar las verticales autónomas de confección y producción editorial con
+          esta plataforma cuando el negocio necesite planificación e inventarios avanzados. Las funciones del
+          rubro permanecen en cada solución; el ERP centraliza las existencias y coordina la operación.
         </p>
         <p class="mt-4 leading-relaxed">
           Las capacidades descritas son parte de la propuesta; su disponibilidad se detallará al presentar el
           caso. La fecha de lanzamiento está por anunciar.
         </p>
+        <div class="mt-6 flex flex-wrap gap-5 text-karma-lilac-300">
+          <a :href="`${portfolioUrl}proyectos/confeccion/`">Confección para Gamarra →</a
+          ><a :href="`${portfolioUrl}proyectos/produccion-editorial/`">Producción editorial →</a>
+        </div>
         <a
           :href="`${portfolioUrl}#projects`"
           class="mt-7 inline-flex text-karma-lilac-300 transition hover:text-white"

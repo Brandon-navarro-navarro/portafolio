@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { manufacturingCases } from '../manufacturing-cases'
 // Proyectos públicos y un caso real de integración empresarial.
 interface Project {
   title: string
@@ -51,6 +52,19 @@ interface CaseStudy {
 }
 
 const caseStudies: CaseStudy[] = [
+  ...manufacturingCases.map((product) => ({
+    eyebrow: 'VERTICAL AUTÓNOMA / PRODUCCIÓN',
+    title: product.name,
+    description: product.description,
+    modules: product.features.map(([name]) => name),
+    stack: ['Propuesta de producto', 'Inventario básico', 'Integración ERP prevista'],
+    caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/${product.slug}/`,
+    logoUrl: `${import.meta.env.BASE_URL}${product.icon}`,
+    logoAlt: `Símbolo de ${product.name}`,
+    accent: product.accent,
+    accentSoft: product.soft,
+    comingSoon: true,
+  })),
   {
     eyebrow: 'PLATAFORMA ERP / GESTIÓN EMPRESARIAL',
     title: 'Plataforma ERP',
@@ -123,7 +137,7 @@ const caseStudies: CaseStudy[] = [
     stack: ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS'],
     caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/hotel/`,
     demoUrl: `${import.meta.env.BASE_URL}demos/hotel/#/login`,
-    logoUrl: `${import.meta.env.BASE_URL}alba-logo.png`,
+    logoUrl: `${import.meta.env.BASE_URL}alba-logo.svg`,
     logoAlt: 'Alba, gestión hotelera',
     accent: '#00aed6',
     accentSoft: '#4e9bf7',
@@ -218,6 +232,14 @@ const statusLabel: Record<Project['status'], string> = {
         </article>
       </div>
 
+      <div class="mt-12 border-t border-karma-border pt-8">
+        <p class="section-eyebrow">SISTEMAS Y PLATAFORMA ERP</p>
+        <h3 class="mt-3 text-2xl font-semibold">Soluciones por rubro</h3>
+        <p class="mt-3 max-w-3xl text-karma-text-secondary">
+          Sistemas especializados por rubro y una plataforma ERP para acompañar el crecimiento de cada
+          negocio.
+        </p>
+      </div>
       <div class="mt-8 grid gap-6">
         <article
           v-for="caseStudy in caseStudies"
@@ -278,7 +300,7 @@ const statusLabel: Record<Project['status'], string> = {
                   class="inline-flex items-center gap-2 border px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110"
                   :style="{ borderColor: caseStudy.accent, backgroundColor: caseStudy.accent }"
                 >
-                  {{ caseStudy.comingSoon ? 'Conocer la plataforma' : 'Ver caso de estudio' }}
+                  {{ caseStudy.comingSoon ? 'Explorar la propuesta' : 'Ver caso de estudio' }}
                   <span aria-hidden="true">→</span>
                 </a>
                 <a
@@ -315,7 +337,7 @@ const statusLabel: Record<Project['status'], string> = {
               <p class="mt-5 pt-4 border-t border-karma-border text-xs text-karma-text-muted leading-relaxed">
                 {{
                   caseStudy.comingSoon
-                    ? 'Alcance previsto. El caso detallado y la demo se presentarán próximamente.'
+                    ? 'Alcance previsto. Las capacidades e integraciones están propuestas; aún no hay demo disponible.'
                     : 'Caso construido con datos ficticios y análisis de investigación.'
                 }}
               </p>

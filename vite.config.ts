@@ -18,6 +18,8 @@ export default defineConfig({
         hotel: path.resolve(import.meta.dirname, 'proyectos/hotel/index.html'),
         taller: path.resolve(import.meta.dirname, 'proyectos/taller/index.html'),
         pos: path.resolve(import.meta.dirname, 'proyectos/punto-de-venta/index.html'),
+        confeccion: path.resolve(import.meta.dirname, 'proyectos/confeccion/index.html'),
+        editorial: path.resolve(import.meta.dirname, 'proyectos/produccion-editorial/index.html'),
         erp: path.resolve(import.meta.dirname, 'proyectos/erp/index.html'),
       },
     },
