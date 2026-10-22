@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { crmStudy } from './crm-study'
+import { serviceStudies } from './service-studies'
 import { manufacturingCases } from './manufacturing-cases'
 
-type Variant = 'hotel' | 'taller' | 'pos' | 'confeccion' | 'produccion-editorial' | 'crm'
+type Variant =
+  'hotel' | 'taller' | 'pos' | 'confeccion' | 'produccion-editorial' | 'crm' | keyof typeof serviceStudies
 
 const props = defineProps<{ variant: Variant }>()
 
@@ -260,10 +262,16 @@ const studies = {
 } as const
 
 const plannedProduct = computed(() => manufacturingCases.find((item) => item.slug === props.variant))
-const isPlanned = computed(() => Boolean(plannedProduct.value) || props.variant === 'crm')
+const serviceStudy = computed(() =>
+  props.variant in serviceStudies ? serviceStudies[props.variant as keyof typeof serviceStudies] : undefined,
+)
+const isPlanned = computed(
+  () => Boolean(plannedProduct.value) || Boolean(serviceStudy.value) || props.variant === 'crm',
+)
 const study = computed(() => {
   const product = plannedProduct.value
   if (props.variant === 'crm') return crmStudy
+  if (serviceStudy.value) return serviceStudy.value
   if (!product) return studies[props.variant as keyof typeof studies]
   return {
     name: product.name,
@@ -583,6 +591,9 @@ const portfolioUrl = import.meta.env.BASE_URL
             }}
           </h2>
           <p v-if="plannedProduct" class="mt-6 leading-relaxed opacity-65">{{ plannedProduct.upgrade }}</p>
+          <p v-else-if="serviceStudy" class="mt-6 leading-relaxed opacity-65">
+            {{ serviceStudy.integration }}
+          </p>
           <p v-else-if="variant === 'crm'" class="mt-6 leading-relaxed opacity-65">
             La propuesta separa el núcleo comercial de la configuración de campos, embudos y reglas. El CRM
             podría funcionar de forma independiente y conectarse al ERP o a las verticales para compartir
@@ -634,7 +645,9 @@ const portfolioUrl = import.meta.env.BASE_URL
                   isPlanned
                     ? variant === 'crm'
                       ? 'Reglas y perfiles'
-                      : 'Inventario básico'
+                      : serviceStudy
+                        ? 'Control por trabajo'
+                        : 'Inventario básico'
                     : variant === 'pos'
                       ? 'Ticket + puertos'
                       : 'Contratos'
@@ -705,6 +718,15 @@ const portfolioUrl = import.meta.env.BASE_URL
               seguimiento comercial y consultaría los datos autorizados del negocio, sin duplicar inventarios
               ni contabilidad.
             </p>
+            <a
+              :href="`${portfolioUrl}proyectos/erp/`"
+              class="inline-flex text-[var(--accent-light)] hover:underline"
+              >Explorar la plataforma ERP →</a
+            >
+          </div>
+          <div v-else-if="serviceStudy" class="space-y-5">
+            <h3 class="text-xl font-semibold">Operación independiente. Integración para crecer.</h3>
+            <p class="text-sm leading-relaxed text-white/65">{{ serviceStudy.integration }}</p>
             <a
               :href="`${portfolioUrl}proyectos/erp/`"
               class="inline-flex text-[var(--accent-light)] hover:underline"

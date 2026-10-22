@@ -20,6 +20,8 @@ export default defineConfig({
         pos: path.resolve(import.meta.dirname, 'proyectos/punto-de-venta/index.html'),
         confeccion: path.resolve(import.meta.dirname, 'proyectos/confeccion/index.html'),
         editorial: path.resolve(import.meta.dirname, 'proyectos/produccion-editorial/index.html'),
+        servicios: path.resolve(import.meta.dirname, 'proyectos/servicios-tecnicos/index.html'),
+        obras: path.resolve(import.meta.dirname, 'proyectos/obras-menores/index.html'),
         crm: path.resolve(import.meta.dirname, 'proyectos/crm/index.html'),
         erp: path.resolve(import.meta.dirname, 'proyectos/erp/index.html'),
       },

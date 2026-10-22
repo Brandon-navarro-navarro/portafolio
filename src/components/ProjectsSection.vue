@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { serviceStudies } from '../service-studies'
 import { crmStudy } from '../crm-study'
 import { manufacturingCases } from '../manufacturing-cases'
 // Proyectos públicos y un caso real de integración empresarial.
@@ -53,6 +54,19 @@ interface CaseStudy {
 }
 
 const caseStudies: CaseStudy[] = [
+  ...Object.entries(serviceStudies).map(([slug, product]) => ({
+    eyebrow: product.eyebrow,
+    title: product.name,
+    description: product.intro,
+    modules: product.capabilities.map((item) => item[1]),
+    stack: ['Propuesta de producto', 'Operación independiente', 'Escalamiento ERP previsto'],
+    caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/${slug}/`,
+    logoUrl: product.logo,
+    logoAlt: product.logoAlt,
+    accent: product.primary,
+    accentSoft: product.accentLight,
+    comingSoon: true,
+  })),
   {
     eyebrow: crmStudy.eyebrow,
     title: 'CRM · Gestión comercial configurable',

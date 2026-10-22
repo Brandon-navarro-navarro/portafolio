@@ -13,10 +13,10 @@ Los iconos tienen volumen, superficies de plata, grafito y un color por producto
 | Mesa               | restaurant-flame.svg        | Naranja          |
 | Pulso              | pulso-logo.svg              | Violeta          |
 | CRM                | crm-logo.png                | Ámbar            |
-| Servicios técnicos | servicios-tecnicos-logo.svg | Lima industrial  |
+| Servicios técnicos | servicios-tecnicos-logo.png | Lima industrial  |
 | Obras menores      | obras-menores-logo.svg      | Cobre            |
 
-Servicios técnicos y Obras menores tienen sus logos preparados; sus fichas de producto todavía no se han agregado. Los logos internos de las demos compiladas conservan sus archivos propios. Los PNG anteriores de Alba, Torque y Pulso permanecen disponibles para compatibilidad con referencias existentes.
+Servicios técnicos y Obras menores tienen sus fichas de propuesta publicadas en el catálogo, sin demo. Servicios técnicos utiliza una caja de herramientas y destornillador; Obras combina casco, llana y cono. Los logos internos de las demos compiladas conservan sus archivos propios. Los PNG anteriores de Alba, Torque y Pulso permanecen disponibles para compatibilidad con referencias existentes.
 
 ## Respaldo
 
@@ -24,3 +24,5 @@ Servicios técnicos y Obras menores tienen sus logos preparados; sus fichas de p
 - `backup/antes-familia-metalica/`: copia exacta de los ocho archivos activos antes de aplicar esta familia, incluido el CRM anterior.
 
 Los respaldos están fuera de `public/`, por lo que no se publican en el sitio compilado.
+
+Los iconos anteriores de Servicios técnicos y Obras se conservan en `backup/antes-servicios-y-obras/`.
