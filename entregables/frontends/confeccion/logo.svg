@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024" role="img" aria-labelledby="title desc">
+<title id="title">Confección para Gamarra</title><desc id="desc">Reconstrucción vectorial editable del icono de Confección para Gamarra. Formas y degradados; sin imágenes rasterizadas.</desc>
+<defs>
+<linearGradient id="silver" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".34" stop-color="#E0E5EC"/><stop offset=".7" stop-color="#A4AFBE"/><stop offset="1" stop-color="#596777"/></linearGradient>
+<linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CBD4DF"/><stop offset=".45" stop-color="#8794A5"/><stop offset="1" stop-color="#344355"/></linearGradient>
+<linearGradient id="brand" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#A6DED1"/><stop offset=".35" stop-color="#146C68"/><stop offset="1" stop-color="#073A3B"/></linearGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#405164"/><stop offset=".5" stop-color="#202E3F"/><stop offset="1" stop-color="#0B1420"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".6" stop-color="#E9EEF4"/><stop offset="1" stop-color="#A7B4C4"/></linearGradient>
+<linearGradient id="fabric" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#A6DED1"/><stop offset=".4" stop-color="#146C68"/><stop offset="1" stop-color="#A6DED1"/></linearGradient>
+<radialGradient id="dial" cx="35%" cy="30%" r="80%"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#CAD2DC"/><stop offset="1" stop-color="#6E7D90"/></radialGradient>
+</defs>
+
+<g id="cuerpo-maquina">
+<path d="M344 97V70q0-10 10-10h22q10 0 10 10v27" fill="url(#brand)" stroke="#487F81" stroke-width="2"/>
+<rect x="349" y="55" width="32" height="12" rx="4" fill="url(#steel)"/>
+<path d="M80 119q0-24 24-24h285q31 0 31 31v218H310V217q0-23-23-23H178v54H80Z" fill="url(#brand)" stroke="#347B78" stroke-width="2"/>
+<path d="M104 95h238l-96 99h-68v54H80V119q0-24 24-24Z" fill="url(#silver)" stroke="#DBE4E9" stroke-width="2"/>
+<path d="M245 194l96-99h28l-95 99Z" fill="#D9F1EB" opacity=".35"/>
+<path d="M310 217q0-23-23-23h-41l64-61Z" fill="#0B3437" opacity=".6"/>
+<circle cx="365" cy="201" r="30" fill="#0B3437"/><circle cx="362" cy="197" r="29" fill="url(#dial)" stroke="#E6EFF2" stroke-width="2"/>
+<rect x="100" y="248" width="48" height="23" rx="6" fill="url(#shade)"/><path d="M123 270v45" stroke="url(#silver)" stroke-width="7"/><path d="M110 315h37" stroke="#C6D1DC" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g id="socle"><rect x="69" y="365" width="26" height="23" rx="7" fill="url(#shade)"/><rect x="378" y="365" width="26" height="23" rx="7" fill="url(#shade)"/><rect x="48" y="331" width="389" height="53" rx="15" fill="url(#shade)" stroke="#69778B" stroke-width="2"/><path d="M64 332h294l-65 51H64q-15 0-15-15v-21q0-15 15-15Z" fill="url(#steel)" opacity=".65"/></g>
+<g id="tela"><path d="M20 371q24-24 42-59q13-25 35-23h67q25 0 45 29l36 52q19 28 42 31l48 5q-51 29-84 6q-18-13-40-42l-35-48q-14-21-29-21q-15 0-24 23l-21 47Z" fill="url(#fabric)" stroke="#A6DED1" stroke-width="2"/><path d="M98 291q-22-1-35 22l-15 27h59q12-18 21-23l18-15Z" fill="#0B5956"/><path d="M146 302q28-2 47 26l35 50q18 25 35 29" fill="none" stroke="#C7F0E4" stroke-width="2" opacity=".8"/></g>
+</svg>

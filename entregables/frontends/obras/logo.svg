@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024" role="img" aria-labelledby="title desc">
+<title id="title">Trabajos y obras menores</title><desc id="desc">Reconstrucción vectorial editable del icono de Trabajos y obras menores. Formas y degradados; sin imágenes rasterizadas.</desc>
+<defs>
+<linearGradient id="silver" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".34" stop-color="#E0E5EC"/><stop offset=".7" stop-color="#A4AFBE"/><stop offset="1" stop-color="#596777"/></linearGradient>
+<linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CBD4DF"/><stop offset=".45" stop-color="#8794A5"/><stop offset="1" stop-color="#344355"/></linearGradient>
+<linearGradient id="brand" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#E8C3A5"/><stop offset=".35" stop-color="#B96545"/><stop offset="1" stop-color="#723B2B"/></linearGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#405164"/><stop offset=".5" stop-color="#202E3F"/><stop offset="1" stop-color="#0B1420"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".6" stop-color="#E9EEF4"/><stop offset="1" stop-color="#A7B4C4"/></linearGradient>
+<linearGradient id="fabric" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#E8C3A5"/><stop offset=".4" stop-color="#B96545"/><stop offset="1" stop-color="#E8C3A5"/></linearGradient>
+<radialGradient id="dial" cx="35%" cy="30%" r="80%"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#CAD2DC"/><stop offset="1" stop-color="#6E7D90"/></radialGradient>
+</defs>
+
+<g id="casco"><path d="M79 304v-46q0-140 146-140t146 140v46Z" fill="url(#brand)" stroke="#D6916E" stroke-width="2"/><path d="M224 118q-41 52-46 173h57q-2-125 42-158-25-16-53-15Z" fill="url(#silver)" stroke="#CBD6DF" stroke-width="2"/><path d="M79 260q14-101 93-128-42 53-43 153H79Z" fill="#D28561" opacity=".5"/><path d="M69 290h51v27H69Zm251-6h51v31h-51Z" fill="url(#brand)"/><path d="M46 311q10-13 33-13h293q20 0 35 15l14 19q-71 49-196 49T32 332Z" fill="url(#shade)" stroke="#68798A" stroke-width="2"/><path d="M45 314q75 32 180 32t181-32l13 18q-75 35-194 35T34 332Z" fill="url(#steel)"/></g>
+<g id="llana"><path d="M100 381l166-58 103 61-166 67Z" fill="url(#silver)" stroke="#C8D4DF" stroke-width="2"/><path d="M100 381v9l103 68 166-67v-7l-166 67Z" fill="url(#steel)"/><path d="M212 372v-27q0-10 10-16l23-13 9 14-23 13v29Z" fill="url(#shade)"/><g transform="rotate(-24 257 320)"><rect x="211" y="300" width="106" height="32" rx="14" fill="url(#brand)" stroke="#E4AA86" stroke-width="2"/><rect x="204" y="300" width="18" height="32" rx="7" fill="url(#silver)"/></g></g>
+<g id="cono"><path d="M382 410l26-116q3-12 13-12t13 12l28 116Z" fill="url(#brand)" stroke="#E2A27D" stroke-width="2"/><path d="M397 342h47l9 36h-64Z" fill="url(#silver)"/><ellipse cx="421" cy="291" rx="11" ry="4" fill="#F0C1A1"/><path d="M366 407l85-7 29 19v18l-85 13-29-22Z" fill="url(#shade)" stroke="#69798A" stroke-width="2"/><path d="M366 407l29 22 85-10-29-19Z" fill="url(#steel)"/><path d="M382 405q39 11 80 0v10q-40 13-80 0Z" fill="url(#brand)"/></g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024" role="img" aria-labelledby="title desc">
+<title id="title">Servicios técnicos y mantenimiento</title><desc id="desc">Reconstrucción vectorial editable del icono de Servicios técnicos y mantenimiento. Formas y degradados; sin imágenes rasterizadas.</desc>
+<defs>
+<linearGradient id="silver" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".34" stop-color="#E0E5EC"/><stop offset=".7" stop-color="#A4AFBE"/><stop offset="1" stop-color="#596777"/></linearGradient>
+<linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CBD4DF"/><stop offset=".45" stop-color="#8794A5"/><stop offset="1" stop-color="#344355"/></linearGradient>
+<linearGradient id="brand" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#DCE8A3"/><stop offset=".35" stop-color="#849B28"/><stop offset="1" stop-color="#455C10"/></linearGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#405164"/><stop offset=".5" stop-color="#202E3F"/><stop offset="1" stop-color="#0B1420"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".6" stop-color="#E9EEF4"/><stop offset="1" stop-color="#A7B4C4"/></linearGradient>
+<linearGradient id="fabric" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#DCE8A3"/><stop offset=".4" stop-color="#849B28"/><stop offset="1" stop-color="#DCE8A3"/></linearGradient>
+<radialGradient id="dial" cx="35%" cy="30%" r="80%"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#CAD2DC"/><stop offset="1" stop-color="#6E7D90"/></radialGradient>
+</defs>
+
+<g id="caja"><path d="M62 177l34-44h292l47 45v200H62Z" fill="url(#brand)" stroke="#A5B754" stroke-width="2"/><path d="M96 133h292l47 45H62Z" fill="url(#fabric)"/><path d="M388 134l47 44v200l-45 24-2-226Z" fill="url(#brand)"/><path d="M57 203q0-24 24-24h285q24 0 24 24v89H57Z" fill="url(#silver)" stroke="#D7E1E9" stroke-width="2"/><path d="M57 297h333v82q0 23-23 23H80q-23 0-23-23Z" fill="url(#silver)" stroke="#A8B7C6" stroke-width="2"/><path d="M300 180h65q24 0 24 24v88H188Z" fill="#71859A" opacity=".22"/><path d="M57 374h333v31q0 17-18 17H75q-18 0-18-17Z" fill="url(#shade)"/><path d="M390 374l45-25v47l-45 25Z" fill="url(#shade)"/>
+<rect x="182" y="263" width="81" height="91" rx="12" fill="#14202C" stroke="#5D6B7C" stroke-width="2"/><rect x="192" y="270" width="61" height="47" rx="7" fill="url(#silver)"/><rect x="198" y="322" width="49" height="24" rx="5" fill="url(#silver)"/>
+<path d="M146 135v-35q0-22 22-22h133q22 0 22 22v35h-29v-27H175v27Z" fill="url(#shade)" stroke="#7B8795" stroke-width="2"/><path d="M132 135l6-18h48l8 18Zm143 0 8-18h48l9 18Z" fill="url(#brand)"/>
+</g>
+<g id="destornillador" transform="rotate(39 395 325)"><path d="M383 328h24v101l8 19-5 25h-30l-5-25 8-19Z" fill="url(#silver)" stroke="#A3B2C0" stroke-width="2"/><rect x="367" y="226" width="56" height="120" rx="22" fill="url(#shade)" stroke="#708094" stroke-width="2"/><rect x="375" y="240" width="40" height="80" rx="15" fill="url(#brand)"/><rect x="365" y="327" width="60" height="20" rx="8" fill="url(#brand)"/><path d="M383 432h24l6 16h-36Z" fill="#DEE6EE"/></g>
+</svg>

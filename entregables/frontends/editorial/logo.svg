@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024" role="img" aria-labelledby="title desc">
+<title id="title">Producción editorial e impresión</title><desc id="desc">Reconstrucción vectorial editable del icono de Producción editorial e impresión. Formas y degradados; sin imágenes rasterizadas.</desc>
+<defs>
+<linearGradient id="silver" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".34" stop-color="#E0E5EC"/><stop offset=".7" stop-color="#A4AFBE"/><stop offset="1" stop-color="#596777"/></linearGradient>
+<linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CBD4DF"/><stop offset=".45" stop-color="#8794A5"/><stop offset="1" stop-color="#344355"/></linearGradient>
+<linearGradient id="brand" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#B4D0E5"/><stop offset=".35" stop-color="#234B70"/><stop offset="1" stop-color="#102E51"/></linearGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#405164"/><stop offset=".5" stop-color="#202E3F"/><stop offset="1" stop-color="#0B1420"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".6" stop-color="#E9EEF4"/><stop offset="1" stop-color="#A7B4C4"/></linearGradient>
+<linearGradient id="fabric" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#B4D0E5"/><stop offset=".4" stop-color="#234B70"/><stop offset="1" stop-color="#B4D0E5"/></linearGradient>
+<radialGradient id="dial" cx="35%" cy="30%" r="80%"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#CAD2DC"/><stop offset="1" stop-color="#6E7D90"/></radialGradient>
+</defs>
+
+<g id="estructura"><path d="M106 154l33-65h228l53 64v227H88V192q0-38 18-38Z" fill="url(#brand)" stroke="#618CB5" stroke-width="2"/><path d="M139 89h228l53 64H190Z" fill="url(#steel)"/><path d="M190 153H111l-23 95v132h74l37-93Z" fill="url(#brand)"/><path d="M369 155h51v225H306Z" fill="url(#shade)"/><rect x="119" y="355" width="27" height="49" rx="7" fill="url(#shade)"/><rect x="369" y="355" width="27" height="49" rx="7" fill="url(#shade)"/><path d="M82 326h343l30 59H72Z" fill="url(#brand)"/><path d="M72 385h383v13H72Z" fill="url(#shade)"/></g>
+<g id="rodillo"><rect x="109" y="174" width="36" height="69" rx="12" fill="url(#shade)"/><rect x="366" y="174" width="36" height="69" rx="12" fill="url(#shade)"/><rect x="126" y="159" width="264" height="101" rx="45" fill="url(#silver)" stroke="#DAE5EC" stroke-width="2"/><ellipse cx="141" cy="209" rx="16" ry="43" fill="url(#steel)"/><rect x="109" y="190" width="23" height="38" rx="9" fill="url(#silver)"/><ellipse cx="379" cy="209" rx="13" ry="44" fill="url(#shade)"/><path d="M163 177h191" stroke="#FFFFFF" stroke-width="3" opacity=".6"/></g>
+<g id="pliego"><path d="M166 250h209q-4 37 39 71l-113 92-77-76q-35-36-58-87Z" fill="url(#paper)" stroke="#DBE5EE" stroke-width="2"/><path d="M301 413l-77-76 190-16Z" fill="url(#silver)"/><path d="M224 337l190-16" fill="none" stroke="#FFFFFF" stroke-width="3"/><path d="M166 251h209" stroke="#728194" stroke-width="3"/></g>
+</svg>
