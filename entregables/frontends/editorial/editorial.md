@@ -6,7 +6,7 @@ Especificación inicial independiente para entregar a una IA de desarrollo. Orie
 
 - Paleta del producto: azul tinta `#234B70`, azul niebla `#B4D0E5`, acento `#6D9BD0`.
 - Repositorios sugeridos: `editorial-web-admin` y `editorial-api-core`; posible `editorial-web-clientes`.
-- Archivos de identidad de esta carpeta: `logo.svg` vectorial editable y `logo.png` transparente exportado de él.
+- Archivos de identidad de esta carpeta: `logo.svg` y `logo.png` con el arte exacto del portafolio. Consulta el índice del paquete para distinguir originales y exportaciones.
 
 ## Objetivo, actores y límites
 
@@ -73,7 +73,7 @@ Reutiliza su lenguaje de shell, navegación lateral y superior, encabezados, esp
 ### Base visual y experiencia transversal
 
 - Tokens de referencia: fondo oscuro `#080D16`, superficie `#111827`, fondo claro `#EEF1F5`, texto sobre claro `#0F1724`. El ERP define estructura y temas; la paleta específica define acentos. Comprueba contraste de texto, foco, botones y estados; no uses automáticamente blanco sobre cualquier acento claro.
-- Usa `logo.svg` o `logo.png` de la misma carpeta en la cabecera, acceso y vista de carga. El SVG utiliza formas, curvas y degradados vectoriales editables, sin imágenes incrustadas. El PNG se genera renderizando este SVG. Conserva proporción, transparencia y margen; añade texto accesible con el nombre del producto.
+- Usa `logo.svg` o `logo.png` de la misma carpeta en la cabecera, acceso y vista de carga. Los logos conservan exactamente el arte usado por el portafolio. Los SVG contienen imágenes rasterizadas: no son vectores editables. No los redibujes ni sustituyas por aproximaciones. Conserva proporción, transparencia y margen; añade texto accesible con el nombre del producto.
 - Prioriza escritorio para administración, con navegación y formularios adaptables a móvil. En móvil no escondas acciones esenciales. Tablas anchas pueden tener desplazamiento interno, sin desbordar toda la página.
 - Soporta teclado, etiquetas de formulario, mensajes junto al campo, foco al abrir/cerrar diálogos y alternativas al arrastre. Mostrar estados mediante texto e icono además de color.
 - Implementa carga, vacío inicial, sin resultados, error recuperable, permisos insuficientes, confirmación de acciones sensibles y aviso de cambios sin guardar. Los filtros y la paginación deben mantener contexto al regresar del detalle.

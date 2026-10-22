@@ -1,0 +1,27 @@
+{
+  "confeccion": {
+    "archivo_original": "public/confeccion-logo.svg",
+    "copia_exacta": "logo.svg",
+    "sha256": "38babc2ad6cd7a7d80f519dd44c6a20fdd32a6ac8a051b8316951cb177e975d4"
+  },
+  "editorial": {
+    "archivo_original": "public/editorial-logo.svg",
+    "copia_exacta": "logo.svg",
+    "sha256": "b7adc54689c6dc81d01cdb241bd13991f9337e103312f028ec7b5c28e845fb41"
+  },
+  "crm": {
+    "archivo_original": "public/crm-logo.png",
+    "copia_exacta": "logo.png",
+    "sha256": "ffcb8ba16fd969067bd45701e1fc0c6dadf97d6a98971c4a114ec57aaf865f7b"
+  },
+  "servicio-tecnico": {
+    "archivo_original": "public/servicios-tecnicos-logo.png",
+    "copia_exacta": "logo.png",
+    "sha256": "5daf3f4475d9599fd631ce651ada45771c57ac4d4c2c82d4d70a9f9c27daa4eb"
+  },
+  "obras": {
+    "archivo_original": "public/obras-menores-logo.svg",
+    "copia_exacta": "logo.svg",
+    "sha256": "47166a57139029c0202d2e275df3726d9909a6152344abf9b4f8b01ab8624934"
+  }
+}

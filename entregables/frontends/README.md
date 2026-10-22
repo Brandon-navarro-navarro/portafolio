@@ -17,10 +17,22 @@ Cada carpeta es independiente: entrega a la IA su archivo Markdown y sus dos arc
 3. Pide un frontend funcional con adaptadores simulados y recorridos verificables antes de conectar APIs reales. Los contratos de este paquete son propuestas, no endpoints existentes.
 4. Revisa supuestos y afina las reglas con usuarios reales. Las capacidades no descritas como iniciales no deben darse por implementadas.
 
-## Logos
+## Logos exactos del portafolio
 
-Cada carpeta contiene `logo.svg` vectorial editable y autocontenido, y `logo.png` de 1024 × 1024 con transparencia, renderizado desde ese SVG.
+Este paquete sustituye la entrega anterior de reconstrucciones vectoriales. **No contiene rediseños ni aproximaciones.** Los logos activos del portafolio no se modificaron.
 
-Los SVG están construidos con formas, trazados y degradados nativos. No contienen etiquetas `image`, imágenes rasterizadas, base64 ni referencias externas. Pueden editarse en herramientas vectoriales. Son reconstrucciones de la composición y colores aprobados; simplifican las texturas y no reproducen cada píxel del arte raster original.
+| Sistema            | Original usado en el portafolio      | Archivo exacto dentro de la carpeta | Archivo adicional                         |
+| ------------------ | ------------------------------------ | ----------------------------------- | ----------------------------------------- |
+| Confección         | `public/confeccion-logo.svg`         | `logo.svg`, idéntico byte a byte    | `logo.png`, exportado renderizando el SVG |
+| Editorial          | `public/editorial-logo.svg`          | `logo.svg`, idéntico byte a byte    | `logo.png`, exportado renderizando el SVG |
+| CRM                | `public/crm-logo.png`                | `logo.png`, idéntico byte a byte    | `logo.svg`, contenedor del PNG original   |
+| Servicios técnicos | `public/servicios-tecnicos-logo.png` | `logo.png`, idéntico byte a byte    | `logo.svg`, contenedor del PNG original   |
+| Obras              | `public/obras-menores-logo.svg`      | `logo.svg`, idéntico byte a byte    | `logo.png`, exportado renderizando el SVG |
 
-Servicios técnicos usa una caja de herramientas con destornillador. Obras usa casco con llana y cono. Este paquete reemplaza los contenedores rasterizados de la entrega anterior; no reemplaza los logos activos del portafolio.
+Los PNG exportados desde SVG tienen 1024 × 1024 con transparencia. Los PNG originales conservan sus dimensiones y contenido originales.
+
+**Estos SVG contienen imágenes rasterizadas, no trazados vectoriales editables.** Se entregan así para conservar los diseños exactos del portafolio. La vectorización fiel es un trabajo pendiente e independiente; no se presenta este paquete como vectorial.
+
+`origen-logos.json` identifica la fuente y la suma SHA-256 de cada archivo copiado exactamente. Los SVG originales son autocontenidos y conservan sus viewports y recortes: no cambiar su encuadre ni extraer toda la imagen incrustada, ya que algunos contienen una lámina y muestran solo el icono correspondiente.
+
+Para generar el frontend usa estos archivos tal cual; no pidas recrear el logo a partir de una descripción. Cada carpeta conserva su documento Markdown independiente.
