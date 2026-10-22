@@ -191,7 +191,7 @@ const studies = {
     surface: '#101927',
     pale: '#eef0f4',
     ink: '#0f1726',
-    logo: `${import.meta.env.BASE_URL}torque-logo.png`,
+    logo: `${import.meta.env.BASE_URL}torque-logo.svg`,
     logoAlt: 'Torque, gestión de taller mecánico',
     demo: `${import.meta.env.BASE_URL}demos/taller/#/login`,
     docs: 'https://kreyshin.github.io/KM.WEB.TALLER.AUTO/',

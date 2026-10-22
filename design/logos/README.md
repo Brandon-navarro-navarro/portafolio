@@ -1,12 +1,26 @@
-# Logos de verticales
+# Logos de producto
 
-Los archivos de `backup/` conservan los logos previos a esta actualización: Alba y Torque en PNG, y los símbolos iniciales de Confección y Editorial en SVG. No se incluyen en el sitio compilado.
+## Familia metálica actual
 
-Logos activos en `public/`:
+Los iconos tienen volumen, superficies de plata, grafito y un color por producto. Los SVG son contenedores de arte rasterizado con fondo transparente; no son vectores trazados. Cada viewport muestra un único icono con margen y escala visual comparable.
 
-- `confeccion-logo.svg`: máquina de coser; petróleo #146C68 y menta #A6DED1.
-- `editorial-logo.svg`: rodillo y pliego; azul tinta #234B70 y azul niebla #B4D0E5.
-- `alba-logo.svg`: cama bajo techo; cian, azul y plata.
-- `torque-logo.png`: pistón y biela; rojo, plata y grafito.
+| Producto           | Archivo en public           | Identidad        |
+| ------------------ | --------------------------- | ---------------- |
+| Confección         | confeccion-logo.svg         | Petróleo y menta |
+| Editorial          | editorial-logo.svg          | Azul tinta       |
+| Torque             | torque-logo.svg             | Rojo y plata     |
+| Alba               | alba-logo.svg               | Cian y azul      |
+| Mesa               | restaurant-flame.svg        | Naranja          |
+| Pulso              | pulso-logo.svg              | Violeta          |
+| CRM                | crm-logo.png                | Ámbar            |
+| Servicios técnicos | servicios-tecnicos-logo.svg | Lima industrial  |
+| Obras menores      | obras-menores-logo.svg      | Cobre            |
 
-Los SVG nuevos son contenedores de los PNG aprobados, no vectores trazados. Sus viewports presentan cada icono por separado conservando los píxeles originales. Torque conserva su PNG aprobado. Los logos internos de las demos compiladas no se rediseñan aquí.
+Servicios técnicos y Obras menores tienen sus logos preparados; sus fichas de producto todavía no se han agregado. Los logos internos de las demos compiladas conservan sus archivos propios. Los PNG anteriores de Alba, Torque y Pulso permanecen disponibles para compatibilidad con referencias existentes.
+
+## Respaldo
+
+- `backup/`: originales previos a las primeras actualizaciones.
+- `backup/antes-familia-metalica/`: copia exacta de los ocho archivos activos antes de aplicar esta familia, incluido el CRM anterior.
+
+Los respaldos están fuera de `public/`, por lo que no se publican en el sitio compilado.

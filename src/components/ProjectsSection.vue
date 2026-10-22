@@ -173,7 +173,7 @@ const caseStudies: CaseStudy[] = [
     stack: ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS'],
     caseStudyUrl: `${import.meta.env.BASE_URL}proyectos/taller/`,
     demoUrl: `${import.meta.env.BASE_URL}demos/taller/#/login`,
-    logoUrl: `${import.meta.env.BASE_URL}torque-logo.png`,
+    logoUrl: `${import.meta.env.BASE_URL}torque-logo.svg`,
     logoAlt: 'Torque, gestión de taller mecánico',
     accent: '#fd263f',
     accentSoft: '#5e87b8',
